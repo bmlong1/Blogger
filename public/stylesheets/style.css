@@ -1,0 +1,47 @@
+h1 {
+  font: 40px "Bradley Hand ITC", Helvetica, Arial, sans-serif;
+  margin: 20px;
+}
+body {
+  background-color: #9BE5B1; 
+  margin: 0px;
+  font: 20px "Bradley Hand ITC", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+.navBar {
+  background-color: #FDCCF6;
+  display: flex;
+}
+
+.navBar_links > a {
+  padding: 0 10px 0 10px;  
+  color: #FFF;
+  text-decoration: none;
+  font: 20px "Bradley Hand ITC", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+.navBar > div {
+   display: inline-block;
+}
+
+.navBar_links > a:hover {
+  color: #000;
+}
+
+.navBar_links {
+  padding: 20px 0 20px 0;
+  min-width: 320px;
+}
+
+.navBar_banner {
+  background-image:url('https://i.ibb.co/GVd1bxm/depositphotos-93477414-stock-illustration-seamless-floral-vector-pattern-symmetrical.jpg');
+  width: 100%;
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.content {
+  text-align: center;
+}
