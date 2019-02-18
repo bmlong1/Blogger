@@ -245,3 +245,5 @@
 [0mGET /stylesheets/style.css [36m304 [0m0.322 ms - -[0m
 [0mGET / [36m304 [0m7.236 ms - -[0m
 [0mGET /stylesheets/style.css [36m304 [0m0.890 ms - -[0m
+[0mGET /moo [33m404 [0m3.442 ms - 910[0m
+[0mGET / [32m200 [0m40.290 ms - 468[0m
