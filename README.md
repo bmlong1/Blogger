@@ -1,2 +1,0 @@
-# Blogger
-Blogger
