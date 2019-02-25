@@ -298,3 +298,19 @@ npm ERR! This is probably not a problem with npm. There is likely additional log
 
 npm ERR! A complete log of this run can be found in:
 npm ERR!     /home/bitnami/.npm/_logs/2019-02-18T20_49_07_820Z-debug.log
+
+> blogger@0.0.0 start /home/bitnami/Blogger
+> node ./bin/www
+
+(node:5037) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+Mongoose connected to mongodb://localhost/Blogger
+Mongoose disconnected
+Mongoose disconnected through app termination
+
+> blogger@0.0.0 start /home/bitnami/Blogger
+> node ./bin/www
+
+(node:5071) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+Mongoose connected to mongodb://localhost/Blogger
+[0mGET /blog-list [36m304 [0m293.756 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.381 ms - -[0m

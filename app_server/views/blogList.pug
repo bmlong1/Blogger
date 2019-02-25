@@ -8,6 +8,14 @@ html(lang='en')
    include navBar.pug
   body
    h1 #{title}
-   p This website is under construction.
-  footer
-  
+   ul(class='list')
+    each blog in blogs
+     li(class='list_item') 
+      div(class='blog-title') #{blog.blogTitle}
+      div(class='blog-text')  #{blog.blogText}
+      div(class='created-on') #{blog.createdOn}
+      div(class='manage')     #{blog.manage}
+       div
+        a(href='/blog-edit') Edit 
+        a(href='/blog-delete') Delete  
+       
