@@ -11,13 +11,14 @@ var routesApi = require('./app_api/routes/index');
 
 var app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // view engine setup
 app.set('views', path.join('./app_server', 'views'));
 app.set('view engine', 'pug');
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
