@@ -3,10 +3,17 @@ html
  head
   title #{title}
   link(rel='stylesheet', href='/stylesheets/style.css')
- body 
+ body
   header
    include navBar.pug
   body
    h1 #{title}
-   p This website is under construction.
-  footer
+   form#blogDeletePost(action='', method='delete', role="form")
+    div.form-group
+     label(for='blogTitle') Blog Title:
+     input#email.form-control(type='text', placeholder='Blog Title' blogTitle='blogTitle')
+    div.form-group
+     label(for='blogText') Blog Text:
+     input#email.gorm-control(type='text', placeholder='Blog Text' blogText='blogText')
+    button.btn.btn-primary(type='submit') Delete Blog
+  

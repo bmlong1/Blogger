@@ -16,6 +16,6 @@ html(lang='en')
       div(class='created-on') #{blog.createdOn}
       div(class='manage')     #{blog.manage}
        div
-        a(href='/blog-edit') Edit 
-        a(href='/blog-delete') Delete  
+        a(href=`/blog-edit/${blog._id}`) Edit 
+        a(href=`/blog-delete/${blog._id}`) Delete  
        

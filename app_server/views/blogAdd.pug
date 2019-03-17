@@ -8,5 +8,13 @@ html
    include navBar.pug
   body
    h1 #{title}
-   p This website is under construction.
-  footer
+   form#blogAddPost(action='/blog-add/', method='post', role="form")
+    div.form-group
+     label(for='blogTitle') Blog Title:
+     input#email.form-control(type='text', placeholder='Blog Title' blogTitle='blogTitle')
+    div.form-group
+     label(for='blogText') Blog Text:
+     input#email.gorm-control(type='text', placeholder='Blog Text' blogText='blogText')
+    button.btn.btn-primary(type='submit') Add Blog
+  
+
