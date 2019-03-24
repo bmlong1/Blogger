@@ -184,9 +184,9 @@ const _showError = function(req, res, status) {
         content = 'Something, somewhere, has gone just a little bit wrong.';
     }
     res.status(status);
-    res.render('generic-text', {
-        title : title,
-        content : content
+    res.render('error', {
+        title: title,
+        content: content
     });
 };
 

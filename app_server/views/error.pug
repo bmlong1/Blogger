@@ -1,6 +1,10 @@
-
-
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+doctype html
+html(lang='en')
+ head
+  title #{title}
+  link(rel='stylesheet', href='/stylesheets/style.css')
+ body 
+  header
+   include navBar.pug
+  body
+   h1 #{content} 

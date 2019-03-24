@@ -9,7 +9,6 @@ const blogList = function (req, res) {
             });
             return;
         } else if (err) {
-            console.log(err);
             res.status(404).json(err);
             return;
         }
@@ -32,6 +31,7 @@ var buildBlogList = function(req, res, results) {
 };
 
 const blogCreate = function (req, res) {
+    console.log(req.body);
     Blog.create({
         blogTitle: req.body.blogTitle,
         blogText: req.body.blogText,
@@ -40,6 +40,7 @@ const blogCreate = function (req, res) {
             res
                 .status(400)
                 .json(err);
+                console.log(err);
         } else {
             res
                 .status(201)
