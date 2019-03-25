@@ -67,7 +67,7 @@ const blogAddPost = function(req, res) {
 /* Blog Edit */
 const blogEdit = function(req, res) {
     var requestOptions, path;
-    path = "/api/blogs/" + req.params.id;
+    path = "/api/blogs/" + req.params.blogid;
     requestOptions = {
         url : apiOptions.server + path,
         method : "GET",
@@ -76,7 +76,9 @@ const blogEdit = function(req, res) {
     request(
         requestOptions,
         function(err, response, body) {
-            renderEditBlog(req, res, body);
+            if(!err) {
+                renderEditBlog(req, res, body);
+            }        
         }
     );
 };
@@ -84,7 +86,7 @@ const blogEdit = function(req, res) {
 /* Book Edit Post */
 const blogEditPost = function(req, res, responseBody) {
     var requestOptions, path, postdata;
-    var id = req.params.id;
+    var id = req.params.blogid;
     path = '/api/blogs/' + id;
 
     postdata = {
@@ -101,7 +103,7 @@ const blogEditPost = function(req, res, responseBody) {
     request(
         requestOptions,
         function(err, response, body) {
-            if (response.statusCode === 201) {
+            if (!err && response.statusCode === 201) {
                 res.redirect('/blog-list');
             } else {
                 _showError(req, res, response.statusCode);
@@ -125,7 +127,7 @@ var renderEditBlog = function(req, res, responseBody) {
 /* Blog Delete */
 const blogDelete = function(req, res) {
     var requestOptions, path;
-    path = "/api/blogs/" + req.params.id;
+    path = "/api/blogs/" + req.params.blogid;
     requestOptions = {
         url : apiOptions.server + path,
         method : "GET",
@@ -141,7 +143,7 @@ const blogDelete = function(req, res) {
 
 const blogDeletePost = function(req, res) {
     var requestOptions, path, postdata;
-    var id = req.params.id;
+    var id = req.params.blogid;
     path = '/api/blogs/' + id;
 
     requestOptions = {
@@ -153,7 +155,7 @@ const blogDeletePost = function(req, res) {
     request (
         requestOptions,
         function(err , response, body) {
-            if (resopnse.statusCode === 204) {
+            if (response.statusCode === 204) {
                 res.redirect('/blog-list');
             } else {
                 _showError(req, res, response.statusCode);

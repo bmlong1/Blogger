@@ -9,6 +9,7 @@ router.get('/blog-add', ctrlBlog.blogAdd);
 router.post('/blog-add/', ctrlBlog.blogAddPost);
 router.get('/blog-list', ctrlBlog.blogList);
 router.get('/blog-delete/:blogid', ctrlBlog.blogDelete);
+router.post('/blog-delete/:blogid', ctrlBlog.blogDeletePost);
 router.get('/blog-edit/:blogid', ctrlBlog.blogEdit);
-
+router.post('/blog-edit/:blogid', ctrlBlog.blogEditPost);
 module.exports = router;

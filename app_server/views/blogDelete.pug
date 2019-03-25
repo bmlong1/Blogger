@@ -8,13 +8,8 @@ html
    include navBar.pug
   body
    h1 #{title}
-   form(action='/blog-add/', method='post', role="form")
-    div.form-group
-     .form-group.row
-        label(for='blogTitle') Blog Title:
-        input#blogTitle.form-control(type='text', placeholder='Blog Title' name='blogTitle')
-     .form-group.row
-        label(for='blogText') Blog Text:
-        textarea#blogText.form-control(type='text', placeholder='Blog Text' name='blogText')
-     button.btn.btn-primary(type='submit' role='submit') Delete Blog
+   p Are you sure you want to delete this blog?
+   form(action='/blog-delete/' + blog._id, method='post', role='form')
+    button.btn.btn-primary(type='submit' role='submit') Yes
+   a(href='http://184.73.106.112/blog-list') No
   
