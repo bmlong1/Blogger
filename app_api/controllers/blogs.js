@@ -86,7 +86,7 @@ const blogUpdateOne = function (req, res) {
         
 const blogDeleteOne = function (req, res) {
     Blog
-        .findByIdAndRemove(blogid)
+        .findByIdAndRemove(req.params.blogid)
         .exec(function(err, blog) {
             if (err) {
                 sendJSONResponse(res, 404, err);         
