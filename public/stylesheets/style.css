@@ -11,6 +11,10 @@ body {
   color: white;
 }
 
+p {
+  font-size: 32px;
+}
+
 .navBar {
   background-color: #9BE5B1;
   display: flex;
@@ -92,6 +96,7 @@ body {
 .created-on {
   font-size: 10px;
   color: #A284A1;
+  font-weight: none;
 }
 
 .manage > div > a {
@@ -105,3 +110,33 @@ body {
   color: white;
 }
 
+#blogText.form-control {
+  height: 200px;
+}
+
+textarea {
+  color: white
+} 
+
+.form-control {
+  width: 40%;
+  background-color: #FDD2F0;
+  border: 2px solid #A284A1;
+  border-radius: 25px;
+  padding: 10px;
+  font: 20px "Bradley Hand ITC";
+}
+
+.form-group > label {
+  font-size: 32px;
+}
+
+.button {
+  background-color: #9BE5B1;
+  border: 2px solid #A284A1;
+  border-radius: 25px;
+  font: inherit;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}

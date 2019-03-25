@@ -12,9 +12,13 @@ html
     div.form-group
      .form-group.row
         label(for='blogTitle') Blog Title:
-        input#blogTitle.form-control(type='text', placeholder=blog.blogTitle name='blogTitle')
+        br
+        - var blogTitle = blog.blogTitle
+        textarea#blogTitle.form-control(type='text', name='blogTitle')=blogTitle
      .form-group.row
         label(for='blogText') Blog Text:
-        textarea#blogText.form-control(type='text', placeholder=blog.blogText name='blogText')
-     button.btn.btn-primary(type='submit' role='submit') Save Blog
+        br
+        -var blogText = blog.blogText
+        textarea#blogText.form-control(type='text', name='blogText')=blogText
+     button.button(type='submit' role='submit') Save Blog
   

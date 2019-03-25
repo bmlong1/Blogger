@@ -10,6 +10,7 @@ html
    h1 #{title}
    p Are you sure you want to delete this blog?
    form(action='/blog-delete/' + blog._id, method='post', role='form')
-    button.btn.btn-primary(type='submit' role='submit') Yes
-   a(href='http://184.73.106.112/blog-list') No
+    button.button(type='submit' role='submit') Yes
+   br
+   a.button(href='http://184.73.106.112/blog-list') No
   
