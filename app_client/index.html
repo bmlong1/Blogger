@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="bloggerApp">
+  <head>
+    <script src="https://code.angularjs.org/1.2.16/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.16/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+    <link rel="stylesheet", href="/stylesheets/style.css"></link>
+  </head>
+  <body>
+    <nav class="navBar">
+     <div class="navBar_links">
+       <a href="/">My Blog</a>
+       <a href="/blog-list">List Blogs</a>
+       <a href="blog-add">Add Blog</a>
+     </div>
+     <div class="navBar_banner">
+     </div>
+   </nav>
+
+    <script type="text/ng-template" id="pages/home.html">
+      <p></p>
+      <h2>{{vm.pageHeader.title}}</h2>
+      <h4>{{vm.message}}</h4>
+      <title>{{vm.pageHeader.title}}</title> 
+   </script>
+   
+  <script type="text/ng-template" id="pages/blog-list.html">
+    <p></p>
+    <h2>{{vm.pageHeader.title}}</h2>
+    <title>{{vm.pageHeader.title}}</title>
+    <ul class="list">
+      <div ng-repeat="blog in vm.blogs">
+        <li class="list_item">
+          <div class="blog-title">{{blog.blogTitle}}</div>
+          <div class="blog-text">{{blog.blogText}}</div>
+          <div class="created-on">{{blog.createdOn}}</div>
+          <div class="manage">{{blog.manage}}
+            <a href="#/blog-edit/{{blog._id}}">Edit</a>
+            <a href="#/blog-delete/{{blog._id}}">Delete</a>
+          </div>
+        </li>
+      </div>
+    </ul> 
+  </script>
+<script type="text/ng-template" id="pages/blog-add.html">
+    <p></p>
+    <h2>{{vm.pageHeader.title}}</h2>
+    <title>{{vm.pageHeader.title}}</title>
+    <form action="/blog-add/" method="post" role="form">
+      <div class="form-group">
+        <class="form-group.row">
+          <label for="blogTitle">Blog Title:</label>
+          <br>
+          <textarea class="blogTitle".form-control type="text" name="blogTitle"></textarea>
+       </class> 
+       <class=form-group>
+          <label for="blogText">Blog Text:</label>
+          <br>
+          <textarea class="blogText.form-control" type="text" name="blogText"></textarea>
+        </class>
+     </div>
+     <button class="button" type= "submit" role="submit">Add Blog</button>
+  
+ </form>
+</script>
+  <div ng-view></div>
+  <script src="/bloggerApp.js"></script>
+  </body>    
+</html>
