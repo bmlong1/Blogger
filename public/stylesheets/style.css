@@ -3,12 +3,12 @@ h1 {
   margin: 20px;
   font-weight: bold;
 }
+
 body { 
   margin: 0px;
   font: 20px "Bradley Hand ITC", Helvetica, Arial, sans-serif;
   text-align: center;
-  background-color: #9BE5B1;
-  color: white;
+  color: #7BCE52;
 }
 
 p {
@@ -16,15 +16,15 @@ p {
 }
 
 .navBar {
-  background-color: #9BE5B1;
+  background-color: #C9F5EE;
   display: flex;
 }
 
 .navBar_links > a {
   padding: 0 10px 0 10px;  
-  color: #FFF;
+  color: #7BCE52;
   text-decoration: none;
-  font: 20px "Bradley Hand ITC", Helvetica, Arial, sans-serif;
+  font: 24px "Bradley Hand ITC", Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
@@ -33,16 +33,16 @@ p {
 }
 
 .navBar_links > a:hover {
-  color: #000;
+  color: #CC52EB;
 }
 
 .navBar_links {
   padding: 20px 0 20px 0;
-  min-width: 320px;
+  min-width: 400px;
 }
 
 .navBar_banner {
-  background-image:url('https://i.ibb.co/GVd1bxm/depositphotos-93477414-stock-illustration-seamless-floral-vector-pattern-symmetrical.jpg');
+  background-image:url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX1470255.jpg');
   width: 100%;
   background-repeat: repeat;
   background-size: contain;
@@ -55,72 +55,78 @@ p {
 .list {
   width: 40%;
   list-style-type: none;
-  border-radius: 25px;
-  border: 2px solid #A284A1;
   text-align: center;
-  padding: 0;
-  padding-top: 30px;
-  padding-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #FDD2F0;
-  font-weight: bold;
 }
 
 .list_item {
-  border-radius: 25px;
-  border: 2px solid #A284A1;
+  border-radius: 10pt;
+  border: 2px solid #C9F5EE;
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 10px; 
-  background-color: #9BE5B1;
-  color: white; 
+  background-color: white;
+  color: #7BCE52; 
   font-weight: bold;
+  overflow: auto;
+  word-break: break-word;
 }
 
 .blog-title {
-  background-color: #FDD2F0;
-  border: 2px solid #A284A1;
-  border-radius: 25px;
+  background-color: #C9F5EE;
   text-align: center;
-  margin-left: 4px;
-  margin-right: 4px;
-  margin-top: 4px;
   font-size: 20px;
 }
 
 .blog-text {
   font-size: 15px;
+  color: #FD439A;
+  padding: 5pt;
 }
 
-.created-on {
-  font-size: 10px;
-  color: #A284A1;
-  font-weight: none;
-}
-
-.manage > div > a {
-  padding-right: 5px;
+.manageEdit {
+  float: left;
   text-decoration: none;
   font-size: 15px;
   color: #A284A1;
+  overflow: hidden;
+  padding-left: 5px;
+  display: inline-block;
 }
 
-.manage > div > a:hover {
-  color: white;
+
+.manage {
+  overflow:hidden;
+  font-size: 10px;
+  overflow:hidden;
+
 }
 
-#blogText.form-control {
-  height: 200px;
+.manageDelete {
+  float: right;
+  text-decoration: none;
+  font-size: 15px;
+  color: #A284A1;
+  overflow:hidden;
+  padding-right: 5px;
+  display: inline-block;
+}
+
+.created-on {
+  display: inline-block;
 }
 
 textarea {
-  color: white
+  color: #F9439A;
+  padding: 5pt;
+  border: 2px solid #A284A1;
+  border-radius: 10pt 0 10pt 0;
 } 
 
 .form-control {
+  height: 200px;
   width: 40%;
-  background-color: #FDD2F0;
   border: 2px solid #A284A1;
   border-radius: 25px;
   padding: 10px;
@@ -131,12 +137,24 @@ textarea {
   font-size: 32px;
 }
 
-.button {
-  background-color: #9BE5B1;
+.button, .yesButton, .noButton {
+  background-color: #C9F5EE;
   border: 2px solid #A284A1;
   border-radius: 25px;
   font: inherit;
-  color: white;
+  color: #FD439A;
   font-weight: bold;
   text-decoration: none;
+}
+
+.yesButton {
+  margin-right: 5pt;
+}
+
+.buttons {
+  display:block;
+}
+
+::placeholder {
+  color: #FD439A;
 }
