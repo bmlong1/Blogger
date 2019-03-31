@@ -8,91 +8,92 @@
   </head>
   <body>
     <nav class="navBar">
-     <div class="navBar_links">
-       <a href="#/">My Blog</a>
-       <a href="#/blog-list">List Blogs</a>
-       <a href="#/blog-add">Add Blog</a>
-     </div>
-     <div class="navBar_banner">
-     </div>
-   </nav>
+      <div class="navBar_links">
+        <a href="#/">My Blog</a>
+        <a href="#/blog-list">List Blogs</a>
+        <a href="#/blog-add">Add Blog</a>
+      </div>
+      
+      <div class="navBar_banner">
+      </div>
+    </nav>
 
     <script type="text/ng-template" id="pages/home.html">
       <h1>{{vm.pageHeader.title}}</h1>
-      <p>{{vm.message}}<p>
+      <p>{{vm.message}}</p>
       <title>{{vm.pageHeader.title}}</title> 
-   </script>
-   
-<script type="text/ng-template" id="pages/blog-list.html">
-    <h1>{{vm.pageHeader.title}}</h1>
-    <title>{{vm.pageHeader.title}}</title>
-    <ul class="list">
-      <div ng-repeat="blog in vm.blogs">
-        <li class="list_item">
-          <div class="blog-title">{{blog.blogTitle}}</div>
-          <div class="blog-text">{{blog.blogText}}</div>
-          <div class="manage">{{blog.manage}}
-            <div class="created-on">{{blog.createdOn}}</div>
-            <a class="manageEdit" href="#/blog-edit/{{blog._id}}">Edit</a>
-            <a class="manageDelete" href="#/blog-delete/{{blog._id}}">Delete</a>
+    </script>
+
+    <script type="text/ng-template" id="pages/blog-list.html">
+      <h1>{{vm.pageHeader.title}}</h1>
+      <title>{{vm.pageHeader.title}}</title>
+      <ul class="list">
+        <div ng-repeat="blog in vm.blogs">
+          <li class="list_item">
+            <div class="blog-title">{{blog.blogTitle}}</div>
+            <div class="blog-text">{{blog.blogText}}</div>
+            <div class="manage">{{blog.manage}}
+              <div class="created-on">{{blog.createdOn}}</div>
+              <a class="manageEdit" href="#/blog-edit/{{blog._id}}">Edit</a>
+              <a class="manageDelete" href="#/blog-delete/{{blog._id}}">Delete</a>
+            </div>
+          </li>
+        </div>
+      </ul> 
+    </script>
+
+    <script type="text/ng-template" id="pages/blog-add.html">
+      <h1>{{vm.pageHeader.title}}</h1>
+      <title>{{vm.pageHeader.title}}</title>
+      <div class="card border-primary">
+        <form name="userForm" ng-submit="vm.submit()" ng-controller="AddController">
+          <div class="form-group">
+            <label for="blogTitle">Blog Title:</label>
+            <br>
+            <input class="form-control" id="blogTitle" name="blogTitle" placeholder="Blog Title"></input>
+            <br>      
+            <label for="blogText">Blog Text:</label>
+            <br>
+            <textarea class="form-control" id="blogText" name="blogText" row="3" placeholder="Blog Text"></textarea>
           </div>
-        </li>
+          <input class="button" type= "submit" value="Add Blog"></button>
+        </form>
       </div>
-    </ul> 
-  </script>
-<script type="text/ng-template" id="pages/blog-add.html">
-    <h1>{{vm.pageHeader.title}}</h1>
-    <title>{{vm.pageHeader.title}}</title>
-    <div class="card border-primary">
-<form name="userForm" ng-submit="vm.submit()" ng-controller="AddController">
-      <div class="form-group">
-          <label for="blogTitle">Blog Title:</label>
-          <br>
-          <input class="form-control" id="blogTitle" name="blogTitle" placeholder="Blog Title"></input>
-       <br> 
-      
-          <label for="blogText">Blog Text:</label>
-          <br>
-          <textarea class="form-control" id="blogText" name="blogText" row="3" placeholder="Blog Text"></textarea>
-        </class>
-     </div>
-     <input class="button" type= "submit" value="Add Blog"></button>
-</form>
-</div>
-</script>
-<script type ="text/ng-template" id="pages/blog-edit.html">
-<h1>{{vm.pageHeader.title}}</h1>
-<title>{{vm.pageHeader.title}}</title>
-<div class="card border-primary">
-<form name="userForm" ng-submit="vm.submit()" ng-controller="EditController">
-<div class="form-group">
-<label for="blogTitle">Blog Title:</label>
-<br>
-<input class="form-control" id="blogTitle" name="blogTitle" value="{{vm.blog.blogTitle}}"></input>
-<br>
-<label for="blogText">Blog Text:</label>
-<br>
-<textarea class="form-control" id="blogText" name="blogText" row="3">{{vm.blog.blogText}}</textarea>
-</class>
-</div>
-<input type="submit" class="button" value="Save Blog"></input>
-</form>
-</div>
-</script>
-  
-<script type="text/ng-template" id="pages/blog-delete.html">
-<h1>{{vm.pageHeader.title}}</h1>
-<title>{{vm.pageHeader.title}}</title>
-<form name="form" ng-submit="vm.submit()" ng-controller="EditController">
-<label for="question">Are you sure you would like to delete this blog?</p>
-<label>
-<div class="buttons">
-<input type="submit" class="yesButton" value="Yes"></input>
-<input type="submit" href="/blog-list" class="noButton" value="No"></input>
-</div>
-</form>
-</script>
-<div ng-view></div>
-  <script src="/bloggerApp.js"></script>
+    </script>
+
+    <script type ="text/ng-template" id="pages/blog-edit.html">
+      <h1>{{vm.pageHeader.title}}</h1>
+      <title>{{vm.pageHeader.title}}</title>
+      <div class="card border-primary">
+        <form name="userForm" ng-submit="vm.submit()" ng-controller="EditController">
+          <div class="form-group">
+            <label for="blogTitle">Blog Title:</label>
+            <br>
+            <input class="form-control" id="blogTitle" name="blogTitle" value="{{vm.blog.blogTitle}}"></input>
+            <br>
+            <label for="blogText">Blog Text:</label>
+            <br>
+            <textarea class="form-control" id="blogText" name="blogText" row="3">{{vm.blog.blogText}}</textarea>
+          </div>
+          <input type="submit" class="button" value="Save Blog"></input>
+        </form>
+      </div>
+    </script>  
+
+    <script type="text/ng-template" id="pages/blog-delete.html">
+      <h1>{{vm.pageHeader.title}}</h1>
+      <title>{{vm.pageHeader.title}}</title>
+      <form name="form" ng-submit="vm.submit()" ng-controller="EditController">
+        <p>Are you sure you would like to delete this blog?</p>
+        <div class="buttons">
+          <input type="submit" class="yesButton" value="Yes"></input>
+          <input type="submit" href="/blog-list" class="noButton" value="No"></input>
+        </div>
+      </form>
+    </script>
+    
+    <div ng-view></div>
+
+    <script src="/bloggerApp.js"></script>
   </body>    
 </html>
