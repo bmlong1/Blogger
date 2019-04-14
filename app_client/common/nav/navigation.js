@@ -4,7 +4,7 @@ var app = angular.module('bloggerApp');
 app.directive('navigation', function() {
     return {
       restrict: 'EA',
-      templateUrl: '/common/nav/navigation.html',
+      templateUrl: '/nav/navigation.html',
       controller: 'NavigationController',
       controllerAs: 'vm'
     };
