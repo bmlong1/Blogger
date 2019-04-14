@@ -40,7 +40,7 @@ app.config( function($routeProvider) {
 		})
 		
 		.when('/login', {
-			templateUrl: 'pages/login',
+			templateUrl: 'pages/login.html',
 			controller: 'LoginController',
 			controllerAs: 'vm'
 		})
@@ -322,3 +322,5 @@ app.service('authentication', authentication);
           currentUser : currentUser
         };
 }
+
+
