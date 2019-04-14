@@ -7,6 +7,17 @@
 		<link rel="stylesheet", href="/stylesheets/style.css"></link>
 	</head>
 	<body>
+<nav class="navBar">
+<div class="navBar_links">
+<a href="#/">My Blog</a>
+    <div>
+        <a href="#/blog-list">List Blogs</a>
+        <a ng-show="vm.isLoggedIn()" class="nav-item nav-link active" href="#/blog-add">Add Blog</a>
+        <a ng-show="!vm.isLoggedIn()" class="nav-item nav-link active" href="#/login">Sign In</a>
+        <a ng-show="vm.isLoggedIn()" class="nav-item nav-link active" href="" ng-click="vm.logout()">Logout <small>({{ vm.currentUser().email }})</small></a>
+    </div>
+</div>
+</nav>
  
 		<script type="text/ng-template" id="pages/home.html">
 			<h1>{{vm.pageHeader.title}}</h1>
