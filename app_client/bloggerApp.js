@@ -50,7 +50,7 @@ app.config( function($routeProvider) {
 
 //*** REST Web API functions ***//
 function addBlog($http, data) {
-	return $http.post('/api/blogs', data);
+	return $http.post('/api/blogs', data, { headers: { Authorization: 'Bearer '+ authentication.getToken() }});
 }
 
 function getAllBlogs($http) {
@@ -66,7 +66,7 @@ function updateBlogById($http, authentication, id, data) {
 }
 
 function deleteBlogById($http, id, data) {
-    return $http.delete('/api/blogs/' + id, data);
+    return $http.delete('/api/blogs/' + id, data, { headers: { Authorization: 'Bearer '+ authentication.getToken() }});
 }
 
 //*** Controllers ***//
