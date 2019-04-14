@@ -113,7 +113,7 @@ app.config( function($routeProvider) {
 });
 
 //*** REST Web API functions ***//
-function addBlog($http, data) {
+function addBlog($http, authentication, data) {
 	return $http.post('/api/blogs', data, { headers: { Authorization: 'Bearer '+ authentication.getToken() }});
 }
 
@@ -129,7 +129,7 @@ function updateBlogById($http, authentication, id, data) {
     return $http.put('/api/blogs/' + id, data, { headers: { Authorization: 'Bearer '+ authentication.getToken() }} );
 }
 
-function deleteBlogById($http, id, data) {
+function deleteBlogById($http, authentication, id, data) {
     return $http.delete('/api/blogs/' + id, data, { headers: { Authorization: 'Bearer '+ authentication.getToken() }});
 }
 
@@ -142,7 +142,7 @@ app.controller('HomeController', function HomeController() {
 	vm.message = "Welcome to my blog site!";
 });
 
-app.controller('AddController', ['$http', '$location',  function AddController($http, $location) {
+app.controller('AddController', ['$http', '$location', 'authentication',  function AddController($http, $location, authentication) {
     var vm = this;
     vm.blog = {};
     vm.pageHeader = {
@@ -152,7 +152,7 @@ app.controller('AddController', ['$http', '$location',  function AddController($
 		var data = vm.blog;
         data.blogTitle = userForm.blogTitle.value;
         data.blogText = userForm.blogText.value;
-        addBlog($http, data).success(function(data) {
+        addBlog($http, authentication, data).success(function(data) {
 			$location.url('/blog-list');
 		}).error(function(e) {
 		});
@@ -172,7 +172,7 @@ app.controller('ListController', function ListController($http) {
     });
 });
 
-app.controller('EditController',[ '$http', '$routeParams', '$location', function EditController($http, $routeParams, $location) {
+app.controller('EditController',[ '$http', '$routeParams', '$location', 'authentication', function EditController($http, $routeParams, $location, authentication) {
     var vm = this;
     vm.pageHeader = {
        title: 'Blog Edit'
@@ -181,7 +181,7 @@ app.controller('EditController',[ '$http', '$routeParams', '$location', function
     vm.id = $routeParams.id;    // Get id from $routParams which must be injected and passed into controller
 	
     // Get blog data so it may be displayed on edit page
-    getBlogById($http, vm.id).success(function(data) {
+    getBlogById($http, authentication, vm.id).success(function(data) {
         vm.blog = data;
         vm.message = "Blog data found!";
     }).error(function (e) {
@@ -194,7 +194,7 @@ app.controller('EditController',[ '$http', '$routeParams', '$location', function
         data.blogTitle = userForm.blogTitle.value;
         data.blogText = userForm.blogText.value;
                
-        updateBlogById($http, vm.id, data).success(function(data) {
+        updateBlogById($http, authentication, vm.id, data).success(function(data) {
 			vm.message = "Blog data updated!";
             $location.url('/blog-list');           
         }).error(function (e) {
@@ -203,7 +203,7 @@ app.controller('EditController',[ '$http', '$routeParams', '$location', function
     }
 }]);
 
-app.controller('DeleteController', ['$http', '$routeParams', '$location', function DeleteController($http, $routeParams, $location) {
+app.controller('DeleteController', ['$http', '$routeParams', '$location', 'authentication', function DeleteController($http, $routeParams, $location, authentication) {
 	var vm = this;
 	vm.pageHeader = {
 		title: 'Delete Blog'
@@ -212,7 +212,7 @@ app.controller('DeleteController', ['$http', '$routeParams', '$location', functi
 	vm.blog = {};
 	vm.id = $routeParams.id;
 
-	getBlogById($http, vm.id).success(function(data) {
+	getBlogById($http, authentication, vm.id).success(function(data) {
 		vm.blog = data;
 		vm.message = "Blog data found!";
 	}).error(function(e) {
@@ -221,7 +221,7 @@ app.controller('DeleteController', ['$http', '$routeParams', '$location', functi
 
 	vm.submit = function() {
 		var data = vm.blog;
-		deleteBlogById($http, vm.id, data).success(function(data) {
+		deleteBlogById($http, authentication, vm.id, data).success(function(data) {
 			vm.message = "Blog deleted";
 			$location.url('/blog-list');
 		}).error(function(e) {
