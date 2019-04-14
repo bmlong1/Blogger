@@ -86,8 +86,8 @@ app.controller('AddController', ['$http', '$location',  function AddController($
     };
     vm.submit = function() {
 		var data = vm.blog;
-        data.blogTitle = form.blogTitle.value;
-        data.blogText = form.blogText.value;
+        data.blogTitle = userForm.blogTitle.value;
+        data.blogText = userForm.blogText.value;
         addBlog($http, data).success(function(data) {
 			$location.url('/blog-list');
 		}).error(function(e) {
