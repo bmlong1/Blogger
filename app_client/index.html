@@ -9,7 +9,9 @@
 	</head>
 	<body>
 	<!-- Navigation Directive -->    
-	<navigation ng-controller="navigationCtrl"></navigation>  
+		<div ng-controller="navigationCtrl">
+	<navigation></navigation>  
+		</div>
 		<script type="text/ng-template" id="pages/home.html">
 			<h1>{{vm.pageHeader.title}}</h1>
 			<p>{{vm.message}}<p>
