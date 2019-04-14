@@ -67,7 +67,7 @@ app.service('authentication', authentication);
 //*** Router Provider ***//
 app.config( function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
-	$locationProvider.hasPrefix('');
+	$locationProvider.hashPrefix('');
 	$routeProvider
 		.when('/', {
 			templateUrl: 'pages/home.html',
