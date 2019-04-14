@@ -69,16 +69,6 @@ function deleteBlogById($http, id, data) {
     return $http.delete('/api/blogs/' + id, data);
 }
 
-//*** Directives ***
-app.directive('navigation', function() {
-    return {
-      restrict: 'EA',
-      templateUrl: '/nav/navigation.html',
-      controller: 'NavigationController',
-      controllerAs: 'vm'
-    };
-});
-
 //*** Controllers ***//
 app.controller('HomeController', function HomeController() {
 	var vm = this;
