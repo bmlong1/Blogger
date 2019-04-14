@@ -7,6 +7,7 @@
 		<link rel="stylesheet", href="/stylesheets/style.css"></link>
 	</head>
 	<body>
+<script type="text/ng-template" id="nav.html">
 <nav class="navBar">
 <div class="navBar_links">
 <a href="#/">My Blog</a>
@@ -16,7 +17,7 @@
         <a ng-show="vm.isLoggedIn()" href="" ng-click="vm.logout()">Logout <small>({{ vm.currentUser().email }})</small></a>
 </div>
 </nav>
- 
+		</script> 
 		<script type="text/ng-template" id="pages/home.html">
 			<h1>{{vm.pageHeader.title}}</h1>
 			<p>{{vm.message}}<p>
