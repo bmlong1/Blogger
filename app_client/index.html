@@ -10,12 +10,10 @@
 <nav class="navBar">
 <div class="navBar_links">
 <a href="#/">My Blog</a>
-    <div>
         <a href="#/blog-list">List Blogs</a>
-        <a ng-show="vm.isLoggedIn()" class="nav-item nav-link active" href="#/blog-add">Add Blog</a>
-        <a ng-show="!vm.isLoggedIn()" class="nav-item nav-link active" href="#/login">Sign In</a>
-        <a ng-show="vm.isLoggedIn()" class="nav-item nav-link active" href="" ng-click="vm.logout()">Logout <small>({{ vm.currentUser().email }})</small></a>
-    </div>
+        <a ng-show="vm.isLoggedIn()" href="#/blog-add">Add Blog</a>
+        <a ng-show="!vm.isLoggedIn()" href="#/login">Sign In</a>
+        <a ng-show="vm.isLoggedIn()" href="" ng-click="vm.logout()">Logout <small>({{ vm.currentUser().email }})</small></a>
 </div>
 </nav>
  
