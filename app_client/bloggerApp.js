@@ -165,15 +165,7 @@ app.controller('DeleteController', ['$http', '$routeParams', '$location', functi
 		});
 	}
 }]);
-//*** Directives ***
-app.directive('navigation', function() {
-    return {
-      restrict: 'EA',
-      templateUrl: '/nav/navigation.html',
-      controller: 'NavigationController',
-      controllerAs: 'vm'
-    };
-});
+
 app.controller('NavigationController', ['$state', '$location', 'authentication', function NavigationController($state, $location, authentication) {
     var vm = this;
     vm.currentPath = $location.path();
