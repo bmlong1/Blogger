@@ -1,21 +1,10 @@
 <div class="navBar">
-  <div class="container">
-    <div class="navbar-header"><a href="/" class="navbar-brand">Loc8r</a>
-      <button type="button" data-toggle="collapse" data-target="#navbar-main" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+    <div class="navBar_links">
+      <a href="#/">My blog</a>
+        <a href="#/blog-list">List Blogs</a>
+        <a ng-show="vm.isLoggedIn()" href="#/blog-add">Add Blog</a>
+        <a ng-show="!vm.isLoggedIn()" href="#/login">Sign In</a>
+        <a ng-show="vm.isLoggedIn()" href="" ng-click="vm.logout()">Logout <small>({{ vm.currentUser().email }})</small></a>
     </div>
-    <div id="navbar-main" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="/#about">About</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="navvm.isLoggedIn"><a href="/#login/?page={{ navvm.currentPath }}">Sign in</a></li>
-        <li ng-show="navvm.isLoggedIn" class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown">{{ navvm.currentUser.name }} <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="" ng-click="navvm.logout()">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+  <div class="navBar_banner"></div>
+  <div>
