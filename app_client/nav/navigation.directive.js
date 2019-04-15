@@ -7,7 +7,7 @@
   function navigation () {
     return {
       restrict: 'EA',
-      templateUrl: '/nav/navigation.html',
+      templateUrl: 'navigation.html',
       controller: 'NavigationController',
         controllerAs: 'vm'
     };
