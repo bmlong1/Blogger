@@ -1,8 +1,7 @@
-  (function () {
+var app = angular.module('bloggerApp', ['ngRoute']);
 
-  angular.module('bloggerApp', ['ngRoute']);
 //*** Router Provider ***//
-function config($routeProvider, $locationProvider) {
+app.config( function($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'home.html',
@@ -48,10 +47,5 @@ function config($routeProvider, $locationProvider) {
 		
 		.otherwise({redirectTo: '/'});
 	$locationProvider.html5Mode(true).hashPrefix('!');
-}
-	  
-	  angular
-    .module('bloggerApp')
-    .config(['$routeProvider', '$locationProvider', config]);
-
-})();
+});
+	   
