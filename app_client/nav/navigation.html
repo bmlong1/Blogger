@@ -1,0 +1,11 @@
+<div class="navBar">
+	<div class="navBar_links">
+		<a href="/">My Blog</a>
+        <a href="/blog-list">List Blogs</a>
+        <a ng-show="vm.isLoggedIn()" href="/blog-add">Add Blog</a>
+        <a ng-show="!vm.isLoggedIn()" href="/login">Sign In</a>
+        <a ng-show="vm.isLoggedIn()" href="" ng-click="vm.logout()">Logout <class="userEmail">({{ vm.currentUser().email }})</class></a>
+    </div>
+	<div class="navBar_banner">
+	</div>
+</div>
