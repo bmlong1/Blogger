@@ -22,7 +22,7 @@
 
 		vm.submit = function() {
 			var data = vm.blog;
-			deleteBlogById($http, authentication, vm.id, data).success(function(data) {
+			deleteBlogById($http, authentication, vm.id).success(function(data) {
 				vm.message = "Blog deleted";
 				$location.url('/blog-list');
 			}).error(function(e) {
@@ -35,8 +35,8 @@ function getBlogById($http, id) {
     return $http.get('/api/blogs/' + id);
 }
 
-function deleteBlogById($http, authentication, id, data) {
-    return $http.delete('/api/blogs/' + id, data, { headers: { Authorization: 'Bearer '+ authentication.getToken() }} );
+function deleteBlogById($http, authentication, id) {
+    return $http.delete('/api/blogs/' + id, { headers: { Authorization: 'Bearer '+ authentication.getToken() }} );
 }
 
 })();
