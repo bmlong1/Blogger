@@ -1,11 +1,11 @@
-(function () {
+var app = angular.module('bloggerApp');
 
-  angular
-    .module('bloggerApp')
-    .service('authentication', authentication);
-
-  authentication.$inject = ['$http', '$window'];
-  function authentication ($http, $window) {    var saveToken = function (token) {
+//*** Authentication Service and Methods **
+app.service('authentication', authentication);
+    authentication.$inject = ['$window', '$http'];
+    function authentication ($window, $http) {
+    
+        var saveToken = function (token) {
             $window.localStorage['blog-token'] = token;
         };
                                        
@@ -65,4 +65,4 @@
           currentUser : currentUser
         };
 }
-})();
+
