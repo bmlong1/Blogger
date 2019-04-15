@@ -29,8 +29,8 @@
 						<div class="blog-text">{{blog.blogText}}</div>
 						<div class="manage">{{blog.manage}}
 							<div class="created-on">{{blog.createdOn}}</div>
-							<a ng-show="vm.isLoggedIn()" class="manageEdit" href="#/blog-edit/{{blog._id}}">Edit</a>
-							<a ng-show="vm.isLoggedIn()" class="manageDelete" href="#/blog-delete/{{blog._id}}">Delete</a>
+							<a ng-show="vm.isLoggedIn()" class="manageEdit" href="/blog-edit/{{blog._id}}">Edit</a>
+							<a ng-show="vm.isLoggedIn()" class="manageDelete" href="/blog-delete/{{blog._id}}">Delete</a>
 						</div>
 					</li>
 				</div>
@@ -76,7 +76,7 @@
 		</script>
 		
 		<script type="text/ng-template" id="pages/register.html">
-			<p>Already a member? Please <a href="/#login?page={{ vm.returnPage }}">log in</a> instead.</p>
+			<p>Already a member? Please <a href="/login?page={{ vm.returnPage }}">log in</a> instead.</p>
 			<form ng-submit="vm.onSubmit()">
 				<div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
 				<div class="form-group">
@@ -96,7 +96,7 @@
 		</script>
 		
 		<script type="text/ng-template" id="pages/login.html">
-			<p>Not a member? Please <a href="/#register?page={{ vm.returnPage }}">register</a> first.</p>
+			<p>Not a member? Please <a href="/register?page={{ vm.returnPage }}">register</a> first.</p>
 			<form ng-submit="vm.onSubmit()">
 				<div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
 				<div class="form-group">
