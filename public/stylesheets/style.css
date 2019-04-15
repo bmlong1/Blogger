@@ -9,6 +9,10 @@ p {
   color: #CC52EB;
 }
 
+.userEmail {
+  font: 10px;
+}
+
 .navBar {
   background-color: #C9F5EE;
   display: flex;
