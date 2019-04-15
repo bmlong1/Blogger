@@ -3,7 +3,7 @@
   angular
     .module('bloggerApp')
     .controller('DeleteController', DeleteController);
-DeleteController.$inject['$http', '$routeParams', '$location', 'authentication'];
+DeleteController.$inject = ['$http', '$routeParams', '$location', 'authentication'];
 function DeleteController($http, $routeParams, $location, authentication) {
 	var vm = this;
 	vm.pageHeader = {
