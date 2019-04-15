@@ -3,7 +3,7 @@
     		.module('bloggerApp')
     		.controller('EditController', EditController);
     
-    	EditController.$inject = ['$http', '$routeParams', '$location'];
+    	EditController.$inject = ['$http', '$routeParams', '$location', 'authentication'];
 	function EditController($http, $routeParams, $location, authentication) {
     		var vm = this;
     		vm.pageHeader = {
