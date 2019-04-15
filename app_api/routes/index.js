@@ -12,7 +12,7 @@ router.get('/blogs', ctrlBlog.blogList);
 router.post('/blogs', auth, ctrlBlog.blogCreate);
 router.get('/blogs/:blogid', ctrlBlog.blogReadOne);
 router.put('/blogs/:blogid', auth, ctrlBlog.blogUpdateOne);
-router.delete('/blogs/:blogid', ctrlBlog.blogDeleteOne);
+router.delete('/blogs/:blogid', auth, ctrlBlog.blogDeleteOne);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 
