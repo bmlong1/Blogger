@@ -4,7 +4,7 @@
     .module('bloggerApp')
     .controller('ListController', ListController);
 
-ListController.$inject['$http', 'authentication];
+ListController.$inject = ['$http', 'authentication'];
 function ListController($http, authentication){
     var vm = this;
     vm.pageHeader = {
