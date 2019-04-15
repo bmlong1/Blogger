@@ -5,12 +5,12 @@ body {
   color: #7BCE52;
 }
 
-p {
-  color: #CC52EB;
+smaller {
+  font-size: 15px;
 }
 
-.userEmail {
-  font: 5px;
+p {
+  color: #CC52EB;
 }
 
 .navBar {
@@ -107,6 +107,7 @@ p {
   color: #FD439A;
   font-weight: bold;
   text-decoration: none;
+  width: 20px;
 }
 
 .yesButton {
