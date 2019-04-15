@@ -4,7 +4,7 @@
     .module('bloggerApp')
     .controller('AddController', AddController);
 
-AddController.$inject['$http', '$location', authentication];
+AddController.$inject = ['$http', '$location', 'authentication'];
   function AddController($http, $location, authentication) {
    var vm = this;
     vm.blog = {};
