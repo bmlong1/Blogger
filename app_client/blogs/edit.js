@@ -13,7 +13,7 @@
     		vm.id = $routeParams.id;  
 	
     
-    		getBlogById($http, authentication, vm.id).success(function(data) {
+    		getBlogById($http, vm.id).success(function(data) {
        			vm.blog = data;
         		vm.message = "Blog data found!";
     		}).error(function (e) {
