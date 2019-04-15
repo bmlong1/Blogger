@@ -70,13 +70,13 @@ function deleteBlogById($http, authentication, id, data) {
 }
 
 //*** Controllers ***//
-app.controller('HomeController', function HomeController() {
-	var vm = this;
-    vm.pageHeader = {
-		title: "My Blogs"
-    };
-	vm.message = "Welcome to my blog site!";
-});
+//app.controller('HomeController', function HomeController() {
+//	var vm = this;
+  //  vm.pageHeader = {
+//		title: "My Blogs"
+  //  };
+//	vm.message = "Welcome to my blog site!";
+//});
 
 app.controller('AddController', ['$http', '$location', 'authentication',  function AddController($http, $location, authentication) {
     var vm = this;
