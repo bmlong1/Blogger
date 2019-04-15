@@ -53,10 +53,6 @@ function addBlog($http, authentication, data) {
 	return $http.post('/api/blogs', data, { headers: { Authorization: 'Bearer '+ authentication.getToken() }});
 }
 
-function getAllBlogs($http) {
-    return $http.get('/api/blogs');
-}
-
 function getBlogById($http, id) {
     return $http.get('/api/blogs/' + id);
 }
@@ -95,23 +91,6 @@ app.controller('AddController', ['$http', '$location', 'authentication',  functi
 	};
 }]);
 
-app.controller('ListController', function ListController($http, authentication) {
-    var vm = this;
-    vm.pageHeader = {
-        title: 'Blog List'
-    };
-	
-	 vm.isLoggedIn = function() {
-        return authentication.isLoggedIn();
-    }
-	
-    getAllBlogs($http).success(function(data) {
-		vm.blogs = data;
-        vm.message = "Blog data found!";
-    }).error(function (e) {
-		vm.message = "Could not get list of blogs";
-    });
-});
 
 app.controller('EditController',[ '$http', '$routeParams', '$location', 'authentication', function EditController($http, $routeParams, $location, authentication) {
     var vm = this;
