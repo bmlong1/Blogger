@@ -6,15 +6,19 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
 		<script src="bloggerApp.js"></script>
 		<link rel="stylesheet", href="/stylesheets/style.css"></link>
-	<script src="navigation.controller.js"></script>
-	<script src="home.controller.js"></script>
+	<script src="/nav/navigation.js"></script>
 	</head>
 	<body>
-	<!-- Navigation Directive  --> 
+	<!-- Navigation Directive -->    
 		<div ng-controller="NavigationController">
 	<navigation></navigation>  
-		</div> 
-		
+		</div>
+		<script type="text/ng-template" id="pages/home.html">
+			<h1>{{vm.pageHeader.title}}</h1>
+			<p>{{vm.message}}<p>
+			<title>{{vm.pageHeader.title}}</title> 
+		</script>
+   
 		<script type="text/ng-template" id="pages/blog-list.html">
 			<h1>{{vm.pageHeader.title}}</h1>
 			<title>{{vm.pageHeader.title}}</title>
@@ -120,5 +124,5 @@
 		</script>
 		
 		<div ng-view></div>
-	<script src="/home.html"></script></body>    
+	</body>    
 </html>
