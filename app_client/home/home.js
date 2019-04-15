@@ -9,6 +9,6 @@
     vm.pageHeader = {
 		title: "My Blogs"
     };
-	vm.message = "Welcome to my blog site!";
+	vm.message = "So this is my blog site...  Let's hope in the future it doesn't look so basic...  Anyways, sign in and add/manage a blog, or just browse because your non-logged in butt can't make any changes.";
 }
 })();
