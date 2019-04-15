@@ -5,7 +5,7 @@
     .controller('NavigationController', NavigationController);
 
  NavigationController.$inject = ['$location', 'authentication'];
-  function navigationCtrl($location, authentication) {
+  function NavigationController($location, authentication) {
 var vm = this;
     vm.currentPath = $location.path();
     vm.currentUser = function()  {
