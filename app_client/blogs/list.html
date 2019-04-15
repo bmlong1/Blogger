@@ -1,0 +1,15 @@
+<h1>{{vm.pageHeader.title}}</h1>
+			<title>{{vm.pageHeader.title}}</title>
+			<ul class="list">
+				<div ng-repeat="blog in vm.blogs">
+					<li class="list_item">
+						<div class="blog-title">{{blog.blogTitle}}</div>
+						<div class="blog-text">{{blog.blogText}}</div>
+						<div class="manage">{{blog.manage}}
+							<div class="created-on">{{blog.createdOn}}</div>
+							<a ng-show="vm.isLoggedIn()" class="manageEdit" href="/blog-edit/{{blog._id}}">Edit</a>
+							<a ng-show="vm.isLoggedIn()" class="manageDelete" href="/blog-delete/{{blog._id}}">Delete</a>
+						</div>
+					</li>
+				</div>
+			</ul> 
