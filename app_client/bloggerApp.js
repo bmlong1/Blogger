@@ -15,19 +15,19 @@ app.config( function($routeProvider, $locationProvider) {
 		})
 
 		.when('/blog-add', {
-			templateUrl: 'pages/blog-add.html',
+			templateUrl: '/blogs/add.html',
 			controller: 'AddController',
 			controllerAs: 'vm'
 		})
           
         .when('/blog-edit/:id', {
-			templateUrl: 'pages/blog-edit.html',
+			templateUrl: '/blogs/edit.html',
 			controller: 'EditController',
 			controllerAs: 'vm'
 		})
         
         .when('/blog-delete/:id', {
-			templateUrl: 'pages/blog-delete.html',
+			templateUrl: '/blogs/delete.html',
             controller: 'DeleteController',
             controllerAs: 'vm'
         })
