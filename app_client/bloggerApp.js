@@ -33,13 +33,13 @@ app.config( function($routeProvider, $locationProvider) {
         })
 	
 		.when('/register', {
-			templateUrl: 'pages/register.html',
+			templateUrl: '/common/auth/register.html',
 			controller: 'RegisterController',
 			controllerAs: 'vm'
 		})
 		
 		.when('/login', {
-			templateUrl: 'pages/login.html',
+			templateUrl: '/common/auth/login.html',
 			controller: 'LoginController',
 			controllerAs: 'vm'
 		})
