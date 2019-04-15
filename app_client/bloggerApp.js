@@ -9,7 +9,7 @@ app.config( function($routeProvider, $locationProvider) {
 		})
 
 		.when('/blog-list', {
-			templateUrl: '/blogs/blog-list.html',
+			templateUrl: '/blogs/list.html',
 			controller : 'ListController',
 			controllerAs: 'vm'
 		})
