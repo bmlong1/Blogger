@@ -1,0 +1,9 @@
+<h1>{{vm.pageHeader.title}}</h1>
+			<title>{{vm.pageHeader.title}}</title>
+			<form name="form" ng-submit="vm.submit()" ng-controller="EditController">
+				<label for="question">Are you sure you would like to delete this blog?</label>
+				<div class="buttons">
+					<input type="submit" class="yesButton" value="Yes"></input>
+					<input type="submit" href="/blog-list" class="noButton" value="No"></input>
+				</div>
+			</form>
