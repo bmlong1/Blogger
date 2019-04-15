@@ -1,0 +1,16 @@
+<h1>{{vm.pageHeader.title}}</h1>
+			<title>{{vm.pageHeader.title}}</title>
+			<div class="card border-primary">
+				<form name="userForm" ng-submit="vm.submit()" ng-controller="EditController">
+					<div class="form-group">
+						<label for="blogTitle">Blog Title:</label>
+						<br>
+						<input class="form-control" id="blogTitle" name="blogTitle" value="{{vm.blog.blogTitle}}"></input>
+						<br>
+						<label for="blogText">Blog Text:</label>
+						<br>
+						<textarea class="form-control" id="blogText" name="blogText" row="3">{{vm.blog.blogText}}</textarea>
+					</div>
+					<input type="submit" class="button" value="Save Blog"></input>
+				</form>
+			</div>
