@@ -1,6 +1,6 @@
   (function () {
 
-  angular.module('loc8rApp', ['ngRoute']);
+  angular.module('bloggerApp', ['ngRoute']);
 //*** Router Provider ***//
 function config($routeProvider, $locationProvider) {
 	$routeProvider
