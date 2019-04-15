@@ -5,7 +5,7 @@
 function config($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
-			templateUrl: 'pages/home.html',
+			templateUrl: '/home.html',
 			controller: 'HomeController',
 			controllerAs: 'vm'
 		})
