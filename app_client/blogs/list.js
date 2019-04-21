@@ -11,6 +11,10 @@
 		vm.isLoggedIn = function() {
         		return authentication.isLoggedIn();
     		}
+		
+		vm.authorName = function() {
+			return authentication.authorName();
+		}
 	
     		getAllBlogs($http).success(function(data) {
 			vm.blogs = data;
