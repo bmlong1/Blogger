@@ -87,6 +87,10 @@ p {
   padding-right: 5px;
 }
 
+.managePublish, .manageCreated{
+  display:inline-block;
+}
+
 .form-control {
   color: #F9439A;
   border: 2px solid #A284A1;
