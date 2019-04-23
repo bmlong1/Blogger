@@ -40,7 +40,7 @@ const blogCreate = function (req, res) {
         blogTitle: req.body.blogTitle,
         blogText: req.body.blogText,
         author: req.body.author,
-        author: req.body.authorEmail,
+        authorEmail: req.body.authorEmail,
     }, function(err, blog) {
         if (err) {
             sendJSONResponse(res, 400, err);
