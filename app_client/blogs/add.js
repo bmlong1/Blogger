@@ -15,6 +15,7 @@
 		var data = vm.blog;
         	data.blogTitle = userForm.blogTitle.value;
         	data.blogText = userForm.blogText.value;
+		data.author = userForm.author.value;
         	addBlog($http, authentication, data).success(function(data) {
 			$location.url('/blog-list');
 		}).error(function(e) {
