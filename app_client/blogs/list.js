@@ -12,7 +12,7 @@
         		return authentication.isLoggedIn();
     		};
 		
-		vm.authorName = authentication.currentUser().name;
+		vm.currentUser = authentication.currentUser().name;
 		
     		getAllBlogs($http).success(function(data) {
 			vm.blogs = data;
