@@ -27,6 +27,7 @@ var buildBlogList = function(req, res, results) {
             blogTitle: obj.blogTitle,
             blogText: obj.blogText,
             createdOn: obj.createdOn,
+            author: obj.author,
             _id: obj._id
         });
     });
@@ -37,6 +38,7 @@ const blogCreate = function (req, res) {
     Blog.create({
         blogTitle: req.body.blogTitle,
         blogText: req.body.blogText,
+        author: req.body.author,
     }, function(err, blog) {
         if (err) {
             sendJSONResponse(res, 400, err);
