@@ -20,6 +20,8 @@
 		}).error(function(e) {
 		});
 	};
+		
+	vm.authorName = authentication.currentUser();
 }
 
 function addBlog($http, authentication, data) {
