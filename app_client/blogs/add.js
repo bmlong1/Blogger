@@ -21,7 +21,7 @@
 		});
 	};
 		
-	vm.authorName = authentication.currentUser();
+	vm.authorName = authentication.currentUser().name;
 }
 
 function addBlog($http, authentication, data) {
