@@ -32,10 +32,6 @@
             $window.localStorage.removeItem('blog-token');
         };
         
-        var authorName = function(user) {
-           return user.name;
-        };
-        
         var isLoggedIn = function() {
           var token = getToken();
 
