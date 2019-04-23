@@ -9,8 +9,10 @@
 				<div class="created-on">
 					<p class="blog-author">Published by {{blog.author}} on {{blog.createdOn}}</p>
 				</div>
-				<a ng-hide = "!vm.isLoggedIn()" ng-show="vm.isLoggedIn() && vm.currentUser == blog.authorEmail" class="manageEdit" href="/blog-edit/{{blog._id}}">Edit</a>
-				<a ng-hide = "!vm.isLoggedIn()" ng-show="vm.isLoggedIn() && vm.currentUser == blog.authorEmail" class="manageDelete" href="/blog-delete/{{blog._id}}">Delete</a>
+				<div ng-hide="!vm.isLoggedIn()">
+				<a ng-show="vm.isLoggedIn() && vm.currentUser == blog.authorEmail" class="manageEdit" href="/blog-edit/{{blog._id}}">Edit</a>
+				<a  ng-show="vm.isLoggedIn() && vm.currentUser == blog.authorEmail" class="manageDelete" href="/blog-delete/{{blog._id}}">Delete</a>
+				</div>
 			</div>
 		</li>
 	</div>
