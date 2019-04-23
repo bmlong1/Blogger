@@ -12,8 +12,11 @@
         		return authentication.isLoggedIn();
     		};
 		
-		vm.currentUser = authentication.currentUser().email;
-		
+		vm.currentUser = function() {
+			if(authentication.currentUser()) {
+				return authentication.currentUser().email;
+			}
+		};
     		getAllBlogs($http).success(function(data) {
 			vm.blogs = data;
         		vm.message = "Blog data found!";
