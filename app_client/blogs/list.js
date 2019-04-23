@@ -13,7 +13,9 @@
     		};
 		
 		vm.currentUser = function() {
-			if(authentication.currentUser()) {
+			if(!authentication.currentUser()) {
+				return "";
+			} else {
 				return authentication.currentUser().email;
 			}
 		};
