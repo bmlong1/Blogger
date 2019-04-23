@@ -12,7 +12,9 @@
         		return authentication.isLoggedIn();
     		};
 		
-		vm.authorName = authentication.authorName();
+		vm.authorName = function() {
+			return authentication.authorName();
+		};
     		getAllBlogs($http).success(function(data) {
 			vm.blogs = data;
         		vm.message = "Blog data found!";
