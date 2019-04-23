@@ -15,14 +15,13 @@
 		var data = vm.blog;
         	data.blogTitle = userForm.blogTitle.value;
         	data.blogText = userForm.blogText.value;
-		data.author = userForm.author.value;
+		data.author = authentication.currentUser().name;
+		data.authorEmail = authentication.currentUser().email;
         	addBlog($http, authentication, data).success(function(data) {
 			$location.url('/blog-list');
 		}).error(function(e) {
 		});
 	};
-		
-	vm.authorName = authentication.currentUser().name;
 }
 
 function addBlog($http, authentication, data) {
