@@ -34,7 +34,7 @@
         
         var authorName = function() {
            return user.name;
-        }
+        };
         
         var isLoggedIn = function() {
           var token = getToken();
