@@ -9,7 +9,7 @@
 				<div class="created-on">{{blog.createdOn}}</div>
 					<a ng-show="vm.isLoggedIn()" class="manageEdit" href="/blog-edit/{{blog._id}}">Edit</a>
 					<a ng-show="vm.isLoggedIn()" class="manageDelete" href="/blog-delete/{{blog._id}}">Delete</a>
-				<p ng-show="vm.isLoggedIn()">{{vm.authorName}}</p>
+				<p ng-show="vm.isLoggedIn()">{{vm.authorName()}}</p>
 				</div>
 		</li>
 	</div>
