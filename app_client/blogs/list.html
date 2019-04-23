@@ -7,8 +7,8 @@
 			<div class="blog-text">{{blog.blogText}}</div>
 			<div class="manage">{{blog.manage}}
 				<div class="created-on">
-					<p ng-show="vm.isLoggedIn()">Published by... {{vm.authorName}} on... </p>
-					<p>{{blog.createdOn}}</p>
+					<p ng-show="vm.isLoggedIn()" class="managePublish">Published by... {{vm.authorName}} on... </p>
+					<p class="managePublish">{{blog.createdOn}}</p>
 				</div>
 				<a ng-show="vm.isLoggedIn()" class="manageEdit" href="/blog-edit/{{blog._id}}">Edit</a>
 				<a ng-show="vm.isLoggedIn()" class="manageDelete" href="/blog-delete/{{blog._id}}">Delete</a>
