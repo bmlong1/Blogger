@@ -33,7 +33,7 @@
         };
         
         var authorName = function() {
-           return user.name
+           return user.name;
         }
         
         var isLoggedIn = function() {
