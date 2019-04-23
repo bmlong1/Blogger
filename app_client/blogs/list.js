@@ -13,7 +13,7 @@
     		}
 		
 		vm.authorName = function() {
-			return authentication.authorName();
+			return "Hey";
 		}
 	
     		getAllBlogs($http).success(function(data) {
