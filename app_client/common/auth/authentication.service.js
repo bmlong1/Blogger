@@ -32,7 +32,7 @@
             $window.localStorage.removeItem('blog-token');
         };
         
-        var authorName = function() {
+        var authorName = function(user) {
            return user.name;
         };
         
