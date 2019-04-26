@@ -5,7 +5,7 @@
         	<a ng-show="vm.isLoggedIn()" href="/blog-add">Add Blog</a>
         	<a ng-show="!vm.isLoggedIn()" href="/login">Sign In</a>
 		<br ng-show="vm.isLoggedIn()">
-		<a ng-show="vm.isLoggedIn()">Play a game!</a>
+		<a ng-show="vm.isLoggedIn()" href="/game">Play a game!</a>
 		<a ng-show="vm.isLoggedIn()" href="" ng-click="vm.logout()">Logout <smaller>({{ vm.currentUser().email }})</smaller></a>
     	</div>
 	<div class="navBar_banner">
