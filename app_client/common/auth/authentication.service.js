@@ -22,8 +22,8 @@
      
         var login = function(user) {
            console.log('Attempting to login user ' + user.email + ' ' + user.password);
-           //$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-            return $http.post('/api/login', user).success(function(data) {
+$http.post('/api/users',user);
+          return $http.post('/api/login', user).success(function(data) {
               saveToken(data.token);
            });
         };
