@@ -29,15 +29,17 @@
                   vm.formError = "";
                   authentication
                         .login(vm.credentials)
+		    	.success(function() {
+			     $http.post('/api/user',user.success(function(data) {
+		}).error(function(e) {
+  console.log("shit didn't wokr");
+		});}
                         .error(function(err){
                               var obj = err;
                               vm.formError = obj.message;
                          })
                          .then(function(){
-                        $http.post('/api/user',user.success(function(data) {
-		}).error(function(e) {
-  console.log("shit didn't wokr");
-		});
+             
                               $location.search('page', null); 
                               $location.path(vm.returnPage);
                    
