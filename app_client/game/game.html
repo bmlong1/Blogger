@@ -1,7 +1,7 @@
 <h1>{{vm.pageHeader.title}}</h1>
 <title>{{vm.pageHeader.title}}</title
-<ul>Users currently online:
-  <li>Hey</li>
-  <li>Yo></li>
-  <li>Hello</li>
-  </ul>
+ <div ng-repeat="user in vm.onlineUsers">
+		<li class="list_item">
+      <p>Name={{user.name}}</p>
+		</li>
+	</div>
