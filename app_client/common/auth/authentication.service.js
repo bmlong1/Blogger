@@ -54,6 +54,10 @@
             };
           }
         };
+                                            
+        var users = function() {
+        return $http.get('/api/login');
+        }
 
         return {
           saveToken : saveToken,
