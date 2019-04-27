@@ -53,7 +53,6 @@ module.exports.login = function(req, res) {
 			sendJSONresponse(res, 200, {
 				"token" : token
 			});
-						onlineUserAdd(req, res, user);
 
 		} else {
 			sendJSONresponse(res, 401, info);
@@ -61,34 +60,3 @@ module.exports.login = function(req, res) {
   })(req, res);
 };
 
-module.exports.onlineUserList = function (req, res) {
-    OnlineUser.find().exec(function(err, results) {
-        if (!results) {
-           sendJSONresponse(res, 404, {
-               "message" : "No users found"
-           });
-        } else if (err) {
-            sendJSONresponse(res, 404, err);
-            return;
-        }
-        sendJSONresponse(res, 200, buildOnlineUserList(req, res, results));
-    });
-};        
-
-var buildOnlineUserList = function(req, res, results) {
-    var onlineUsers = [];
-    results.forEach(function(obj) {
-        onlineUsers.push({
-           userName: obj.userName,
-	   userEmail: obj.userEmail
-        });
-    });
-    return onlineUsers;
-};
-
-const onlineUserAdd = function (user) {
-    OnlineUser.create({
-        userName: user.name,
-        userEmail: user.email,
-    });
-};
