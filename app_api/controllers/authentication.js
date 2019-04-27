@@ -64,14 +64,14 @@ module.exports.login = function(req, res) {
 module.exports.onlineUserList = function (req, res) {
     OnlineUser.find().exec(function(err, results) {
         if (!results) {
-           sendJSONResponse(res, 404, {
+           sendJSONresponse(res, 404, {
                "message" : "No users found"
            });
         } else if (err) {
-            sendJSONResponse(res, 404, err);
+            sendJSONresponse(res, 404, err);
             return;
         }
-        sendJSONResponse(res, 200, buildOnlineUserList(req, res, results));
+        sendJSONresponse(res, 200, buildOnlineUserList(req, res, results));
     });
 };        
 
@@ -92,9 +92,9 @@ const onlineUserAdd = function (user) {
         userEmail: user.email,
     }, function(err, onlineUser) {
         if (err) {
-            sendJSONResponse(res, 400, err);
+            sendJSONresponse(res, 400, err);
         } else {
-            sendJSONResponse(res, 201, onlineUser);
+            sendJSONresponse(res, 201, onlineUser);
         }
     });
 };
