@@ -26,9 +26,9 @@ $http.post('/api/user',user.success(function(data) {
 		}).error(function(e) {
   console.log("shit didn't wokr");
 		});
-          return $http.post('/api/login', user).success(function(data) {
+      /*    return $http.post('/api/login', user).success(function(data) {
               saveToken(data.token);
-           });
+           });*/
         };
         
         var logout = function() {
