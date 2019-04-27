@@ -21,7 +21,7 @@
                         vm.formError = "All fields required, please try again";
                         return false;
                   } else {
-                        vm.doLogin();
+                       /* vm.doLogin();*/
 			  return $http.post('/api/user',vm.credentials);
                   }
             };
