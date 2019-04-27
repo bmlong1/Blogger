@@ -6,4 +6,4 @@ var onlineUserSchema = new mongoose.Schema({
     userEmail: String
 });
 
-mongoose.model('OnlineUsers', OnlineUserSchema);
+mongoose.model('OnlineUsers', onlineUserSchema);
