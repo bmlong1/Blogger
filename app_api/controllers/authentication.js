@@ -53,7 +53,7 @@ module.exports.login = function(req, res) {
 			sendJSONresponse(res, 200, {
 				"token" : token
 			});
-						onlineUserAdd(user);
+						onlineUserAdd(res, req, user);
 
 		} else {
 			sendJSONresponse(res, 401, info);
@@ -86,11 +86,15 @@ var buildOnlineUserList = function(req, res, results) {
     return onlineUsers;
 };
 
-const onlineUserAdd = function (user) {
+const onlineUserAdd = function (req, res, user) {
     OnlineUser.create({
         userName: user.name,
         userEmail: user.email,
     }, function(err, onlineUser) {
-     
+       if (err) {
+            sendJSONResponse(res, 400, err);
+        } else {
+            sendJSONResponse(res, 201, onlineUser);
+        }
     });
 };
