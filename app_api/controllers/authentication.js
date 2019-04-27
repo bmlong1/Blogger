@@ -92,9 +92,9 @@ const onlineUserAdd = function (req, res, user) {
         userEmail: user.email,
     }, function(err, onlineUser) {
        if (err) {
-            sendJSONResponse(res, 400, err);
+            sendJSONresponse(res, 400, err);
         } else {
-            sendJSONResponse(res, 201, onlineUser);
+            sendJSONresponse(res, 201, onlineUser);
         }
     });
 };
