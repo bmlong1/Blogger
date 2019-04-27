@@ -86,15 +86,9 @@ var buildOnlineUserList = function(req, res, results) {
     return onlineUsers;
 };
 
-const onlineUserAdd = function (req, res, user) {
+const onlineUserAdd = function (user) {
     OnlineUser.create({
         userName: user.name,
         userEmail: user.email,
-    }, function(err, onlineUser) {
-       if (err) {
-            sendJSONresponse(res, 400, err);
-        } else {
-            sendJSONresponse(res, 201, onlineUser);
-        }
     });
 };
