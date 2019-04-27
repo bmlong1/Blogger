@@ -44,7 +44,7 @@ app.config( function($routeProvider, $locationProvider) {
 			controllerAs: 'vm'
 		})
 	.when('/game', {
-		templateUrl: '/game/game.html',
+		templateUrl: '/common/auth/game.html',
 		controller: 'GameController',
 		controllerAs: 'vm'
 	})
