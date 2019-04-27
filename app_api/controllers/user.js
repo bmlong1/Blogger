@@ -31,10 +31,10 @@ const buildOnlineUserList = function(req, res, results) {
     return onlineUsers;
 };
 
-const onlineUserAdd = function (req, res, results) {
+const onlineUserAdd = function (req, res) {
     OnlineUser.create({
-        userName: user.name,
-        userEmail: user.email,
+        userName: req.body.email,
+        userEmail: req.body.email,
     }, function(err, onlineuser) {
       if(err) {
         send JSONResponse(res, 400, err);
