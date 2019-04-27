@@ -53,7 +53,7 @@ module.exports.login = function(req, res) {
 			sendJSONresponse(res, 200, {
 				"token" : token
 			});
-						onlineUserAdd(res, req, user);
+						onlineUserAdd(req, res, user);
 
 		} else {
 			sendJSONresponse(res, 401, info);
