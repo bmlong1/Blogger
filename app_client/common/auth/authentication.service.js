@@ -56,7 +56,7 @@ $http.post('/api/users',user);
         };
                                             
         var users = function() {
-        return $http.get('/api/login');
+        return $http.get('/api/user');
         }
 
         return {
