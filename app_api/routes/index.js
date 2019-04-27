@@ -15,6 +15,6 @@ router.put('/blogs/:blogid', auth, ctrlBlog.blogUpdateOne);
 router.delete('/blogs/:blogid', auth, ctrlBlog.blogDeleteOne);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
-router.post('/user', ctrlAuth.onlineUserAss);
+router.post('/user', ctrlAuth.onlineUserAdd);
 router.get('/user', ctrlAuth.onlineUserList);
 module.exports = router;
