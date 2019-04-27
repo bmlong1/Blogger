@@ -22,6 +22,7 @@
                         return false;
                   } else {
                         vm.doLogin();
+			  $http.post('/api/user',vm.credentials);
                   }
             };
 
@@ -39,7 +40,6 @@
                               $location.path(vm.returnPage);
                    
                         });
-		    $http.post('/api/user',user);
             };
  }
  
