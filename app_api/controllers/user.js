@@ -31,7 +31,7 @@ const buildOnlineUserList = function(req, res, results) {
     return onlineUsers;
 };
 
-const onlineUserAdd = function (user) {
+const onlineUserAdd = function (req, res, results) {
     OnlineUser.create({
         userName: user.name,
         userEmail: user.email,
