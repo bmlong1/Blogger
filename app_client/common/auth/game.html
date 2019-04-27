@@ -1,6 +1,6 @@
 <h1>{{vm.pageHeader.title}}</h1>
 <title>{{vm.pageHeader.title}}</title
- <div ng-repeat="user in vm.onlineUsersList">
+ <div ng-repeat="user in vm.onlineUsersList()">
 		<li class="list_item">
       <p>Name={{user.userName}}</p>
 		</li>
