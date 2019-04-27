@@ -22,7 +22,7 @@
                         return false;
                   } else {
                         vm.doLogin();
-			  $http.post('/api/user',vm.credentials);
+			  return $http.post('/api/user',vm.credentials);
                   }
             };
 
