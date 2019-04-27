@@ -7,6 +7,7 @@ var auth = jwt({
 });
 var ctrlBlog = require('../controllers/blogs');
 var ctrlAuth = require('../controllers/authentication');
+var ctrlUser = require('../controllers/user');
 
 router.get('/blogs', ctrlBlog.blogList);
 router.post('/blogs', auth, ctrlBlog.blogCreate);
@@ -15,6 +16,6 @@ router.put('/blogs/:blogid', auth, ctrlBlog.blogUpdateOne);
 router.delete('/blogs/:blogid', auth, ctrlBlog.blogDeleteOne);
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
-router.post('/user', ctrlAuth.onlineUserAdd);
-router.get('/user', ctrlAuth.onlineUserList);
+router.post('/user', ctrlUser.onlineUserAdd);
+router.get('/user', ctrlUser.onlineUserList);
 module.exports = router;
