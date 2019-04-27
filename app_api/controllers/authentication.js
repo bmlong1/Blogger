@@ -60,7 +60,7 @@ module.exports.login = function(req, res) {
   })(req, res);
 };
 
-const onlineUserList = function (req, res) {
+module.exports.onlineUserList = function (req, res) {
     OnlineUser.find().exec(function(err, results) {
         if (!results) {
            sendJSONResponse(res, 404, {
