@@ -66,7 +66,8 @@
           login : login,
           logout : logout,
           isLoggedIn : isLoggedIn,
-          currentUser : currentUser
+          currentUser : currentUser,
+          users : users
         };
 }
 })();
