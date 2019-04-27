@@ -37,9 +37,9 @@ const onlineUserAdd = function (req, res) {
         userEmail: req.body.email,
     }, function(err, onlineuser) {
       if(err) {
-        send JSONResponse(res, 400, err);
+        sendJSONResponse(res, 400, err);
       } else {
-      send JSONResponse(res, 201, onlineuser);
+      sendJSONResponse(res, 201, onlineuser);
       }
     });
 };
