@@ -79,7 +79,7 @@ var buildOnlineUserList = function(req, res, results) {
     results.forEach(function(obj) {
         onlineUsers.push({
            userName: obj.userName,
-	   userEmail: obj.userEmail;
+	   userEmail: obj.userEmail
         });
     });
     return onlineUsers;
