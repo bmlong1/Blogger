@@ -10,8 +10,17 @@
 		title: "Game Controller"
     };
 
-	vm.onlineUsersList = function() {
-		return authentication.users();
+	 
+	 getAllUsers($http).success(function(data) {
+			vm.users = data;
+        		vm.message = "User data found!";
+    		}).error(function (e) {
+			vm.message = "Could not get list of Users";
+    		});
+}
+
+	function getAllUsers($http) {
+    		return $http.get('/api/user');
 	}
 }
 })();
