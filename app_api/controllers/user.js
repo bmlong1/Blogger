@@ -33,7 +33,7 @@ const buildOnlineUserList = function(req, res, results) {
 
 const onlineUserAdd = function (req, res) {
     OnlineUser.create({
-        userName: req.body.email,
+        userName: req.body.name,
         userEmail: req.body.email,
     }, function(err, onlineuser) {
       if(err) {
