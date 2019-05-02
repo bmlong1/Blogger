@@ -24,11 +24,11 @@
         var login = function(user) {
            console.log('Attempting to login user ' + user.email + ' ' + user.password);
           var user2 = { email: user.email, name: ""};
-          $http.get('/api/allUsers').forEach(element) {
+          $http.get('/api/allUsers').forEach(function(element) {
             /*if(element.email == user.email) {
                 user2.name = element.name;
             }*/
-          }
+          )};
            $http.post('/api/user', user2);*/
          return $http.post('/api/login', user).success(function(data) {
               saveToken(data.token);
