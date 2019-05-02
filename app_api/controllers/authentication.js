@@ -85,3 +85,14 @@ var buildUserList = function(req, res, results) {
     return users;
 };
 
+module.exports.userDelete = function(req, res) {
+	User.deleteOne({email: req.body.userEmail}).
+	exec(function(err, user) {
+		 if (err) {
+                sendJSONResponse(res, 404, err);         
+            } else {
+                sendJSONResponse(res, 204, null);
+            }
+	});
+};
+
