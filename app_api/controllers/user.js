@@ -9,14 +9,14 @@ var sendJSONResponse = function(res, status, content) {
 const onlineUserList = function (req, res) {
     OnlineUser.find().exec(function(err, results) {
         if (!results) {
-           sendJSONresponse(res, 404, {
+           sendJSONResponse(res, 404, {
                "message" : "No users found"
            });
         } else if (err) {
-            sendJSONresponse(res, 404, err);
+            sendJSONResponse(res, 404, err);
             return;
         }
-        sendJSONresponse(res, 200, buildOnlineUserList(req, res, results));
+        sendJSONResponse(res, 200, buildOnlineUserList(req, res, results));
     });
 };        
 
