@@ -4,7 +4,7 @@
     .module('bloggerApp')
     .controller('GameController', GameController);
 
- function GameController(authentication) {
+ function GameController($http, authentication) {
 	var vm = this;
     vm.pageHeader = {
 		title: "Game Controller"
