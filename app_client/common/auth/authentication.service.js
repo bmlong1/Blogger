@@ -28,7 +28,7 @@
             /*if(element.email == user.email) {
                 user2.name = element.name;
             }*/
-          )};
+          });
            $http.post('/api/user', user2);*/
          return $http.post('/api/login', user).success(function(data) {
               saveToken(data.token);
