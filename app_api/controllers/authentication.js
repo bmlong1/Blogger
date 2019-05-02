@@ -1,7 +1,6 @@
 var passport = require('passport');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
-var OnlineUser = mongoose.model('OnlineUsers');
 
 var sendJSONresponse = function(res, status, content) {
 	res.status(status);
@@ -60,3 +59,40 @@ module.exports.login = function(req, res) {
   })(req, res);
 };
 
+module.exports.userList = function (req, res) {
+    User.find().exec(function(err, results) {
+        if (!results) {
+           sendJSONResponse(res, 404, {
+               "message" : "No users found"
+           });
+        } else if (err) {
+            sendJSONResponse(res, 404, err);
+            return;
+        }
+        sendJSONResponse(res, 200, buildUserList(req, res, results));
+    });
+};        
+
+var buildUserList = function(req, res, results) {
+    var users = [];
+    results.forEach(function(obj) {
+        users.push({
+           userName: obj.name,
+	   userEmail: obj.email
+        });
+    });
+    return users;
+};
+
+modue.exports.userAdd = function (req, res) {
+    User.create({
+        userName: req.body.name,
+        userEmail: req.body.email,
+    }, function(err, user) {
+      if(err) {
+        sendJSONResponse(res, 400, err);
+      } else {
+      sendJSONResponse(res, 201, user);
+      }
+    });
+};
