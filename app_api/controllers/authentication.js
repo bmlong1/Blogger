@@ -66,16 +66,17 @@ module.exports.userList = function (req, res) {
                "message" : "No users found"
            });
         } else if (err) {
-						console.log("nada");
-
             sendJSONresponse(res, 404, err);
             return;
         }
+	
         sendJSONresponse(res, 200, buildUserList(req, res, results));
     });
 };        
 
 var buildUserList = function(req, res, results) {
+							console.log("nada");
+
     var users = [];
     results.forEach(function(obj) {
         users.push({
