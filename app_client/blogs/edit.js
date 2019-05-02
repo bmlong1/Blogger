@@ -16,6 +16,7 @@
     		getBlogById($http, vm.id).success(function(data) {
        			vm.blog = data;
         		vm.message = "Blog data found!";
+			console.log(vm.blog);
     		}).error(function (e) {
         		vm.message = "Could not get blog given id of " + vm.id;
     		});
