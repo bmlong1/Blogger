@@ -75,8 +75,6 @@ module.exports.userList = function (req, res) {
 };        
 
 var buildUserList = function(req, res, results) {
-							console.log("nada");
-
     var users = [];
     results.forEach(function(obj) {
         users.push({
@@ -84,6 +82,7 @@ var buildUserList = function(req, res, results) {
 	   userEmail: obj.email
         });
     });
+	console.log(users);
     return users;
 };
 
