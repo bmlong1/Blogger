@@ -21,6 +21,5 @@
 
 	function getAllUsers($http) {
     		return $http.get('/api/user');
-	}
-}
+	};
 })();
