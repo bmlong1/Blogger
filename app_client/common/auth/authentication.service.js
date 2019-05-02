@@ -28,7 +28,7 @@
           $http.get('/api/allUsers').success(function(data) {
             userss = data;
             userss.forEach(function(element) {
-              console.log(element.email);
+              console.log(element);
             if(element.email == user.email) {
                 user2.name = element.name;
             }
