@@ -84,15 +84,4 @@ var buildUserList = function(req, res, results) {
     return users;
 };
 
-module.exports.userAdd = function (req, res) {
-    User.create({
-        userName: req.body.name,
-        userEmail: req.body.email,
-    }, function(err, user) {
-      if(err) {
-        sendJSONresponse(res, 400, err);
-      } else {
-      sendJSONresponse(res, 201, user);
-      }
-    });
 };
