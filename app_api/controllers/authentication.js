@@ -84,4 +84,3 @@ var buildUserList = function(req, res, results) {
     return users;
 };
 
-};
