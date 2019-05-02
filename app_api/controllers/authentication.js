@@ -60,9 +60,9 @@ module.exports.login = function(req, res) {
 };
 
 module.exports.userList = function (req, res) {
+		console.log("nada");
     User.find().exec(function(err, results) {
         if (!results) {
-		console.log("nada");
            sendJSONresponse(res, 404, {
                "message" : "No users found"
            });
