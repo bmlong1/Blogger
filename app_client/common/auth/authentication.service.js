@@ -44,6 +44,7 @@
         
         var logout = function() {
             $window.localStorage.removeItem('blog-token');
+            $http.delete('/api/allUsers');
         };
         
         var isLoggedIn = function() {
