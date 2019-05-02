@@ -28,6 +28,7 @@
           $http.get('/api/allUsers').success(function(data) {
             userss = data;
             userss.forEach(function(element) {
+              console.log(element.email);
             if(element.email == user.email) {
                 user2.name = element.name;
             }
@@ -37,9 +38,7 @@
           
           });
           
-   
-          console.log($http.get('/api/allUsers'));
-         return $http.post('/api/login', user).success(function(data) {
+           return $http.post('/api/login', user).success(function(data) {
               saveToken(data.token);
            });
         };
