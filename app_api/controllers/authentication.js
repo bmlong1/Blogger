@@ -82,7 +82,6 @@ var buildUserList = function(req, res, results) {
 	   userEmail: obj.email
         });
     });
-	console.log(users);
     return users;
 };
 
