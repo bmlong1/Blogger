@@ -45,7 +45,7 @@
         var logout = function() {
           var thisEmail = currentUser().email;
             $window.localStorage.removeItem('blog-token');
-          return $http.delete('/api/allUsers/' + thisEmail);
+          return $http.delete('/api/allUsers/' + thisEmail, thisEmail);
         };
         
         var isLoggedIn = function() {
