@@ -22,7 +22,7 @@
     		getAllBlogs($http).success(function(data) {
 			vm.blogs = data;
         		vm.message = "Blog data found!";
-			console.log(blogs);
+			console.log(vm.blogs);
     		}).error(function (e) {
 			vm.message = "Could not get list of blogs";
     		});
