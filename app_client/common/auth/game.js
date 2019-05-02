@@ -9,12 +9,16 @@
     vm.pageHeader = {
 		title: "Game Controller"
     };
-
+	
+	 $http.get('/api/allUsers').success(function(data) {
+		console.log(data);
+	});
 	 
 	 getAllUsers($http).success(function(data) {
 			vm.users = data;
         		vm.message = "User data found!";
 		 	console.log(vm.users);
+	
     		}).error(function (e) {
 			vm.message = "Could not get list of Users";
     		});
