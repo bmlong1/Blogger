@@ -62,14 +62,14 @@ module.exports.login = function(req, res) {
 module.exports.userList = function (req, res) {
     User.find().exec(function(err, results) {
         if (!results) {
-           sendJSONResponse(res, 404, {
+           sendJSONresponse(res, 404, {
                "message" : "No users found"
            });
         } else if (err) {
-            sendJSONResponse(res, 404, err);
+            sendJSONresponse(res, 404, err);
             return;
         }
-        sendJSONResponse(res, 200, buildUserList(req, res, results));
+        sendJSONresponse(res, 200, buildUserList(req, res, results));
     });
 };        
 
@@ -90,9 +90,9 @@ module.exports.userAdd = function (req, res) {
         userEmail: req.body.email,
     }, function(err, user) {
       if(err) {
-        sendJSONResponse(res, 400, err);
+        sendJSONresponse(res, 400, err);
       } else {
-      sendJSONResponse(res, 201, user);
+      sendJSONresponse(res, 201, user);
       }
     });
 };
