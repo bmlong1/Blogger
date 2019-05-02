@@ -89,6 +89,7 @@ module.exports.userDelete = function(req, res) {
 	User.deleteOne({email: req.body.userEmail}).
 	exec(function(err, user) {
 		 if (err) {
+			 console.log("err");
                 sendJSONresponse(res, 404, err);         
             } else {
                 sendJSONresponse(res, 204, null);
