@@ -24,7 +24,8 @@
         var login = function(user) {
            console.log('Attempting to login user ' + user.email + ' ' + user.password);
           var user2 = { email: user.email, name: ""};
-          $http.get('/api/allUsers').forEach(function(element) {
+          var userss = $http.get('/api/allUsers');
+          userss.forEach(function(element) {
             if(element.email == user.email) {
                 user2.name = element.name;
             }
