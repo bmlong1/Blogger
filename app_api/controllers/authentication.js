@@ -88,6 +88,6 @@ var buildUserList = function(req, res, results) {
 
 module.exports.userDelete = function(req, res) {
 	console.log(req.params.email);
-	OnlineUser.deleteMany({userEmail: req.params.email}, function(err) {});
+	OnlineUser.deleteMany({userEmail: "melaniemays@msn.com"}, function(err) {});
 };
 
