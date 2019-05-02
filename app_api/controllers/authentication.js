@@ -1,6 +1,7 @@
 var passport = require('passport');
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var OnlineUser = mongoose.model('OnlineUser');
 
 var sendJSONresponse = function(res, status, content) {
 	res.status(status);
@@ -87,6 +88,6 @@ var buildUserList = function(req, res, results) {
 
 module.exports.userDelete = function(req, res) {
 	console.log(req.params.email);
-	User.deleteOne({email: req.params.email}, function(err) {});
+	OnlineUser.deleteOne({email: req.params.email}, function(err) {});
 };
 
