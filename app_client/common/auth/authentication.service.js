@@ -43,7 +43,10 @@
         };
         
         var logout = function() {
-            $http.delete('/api/allUsers' + currentUser().email);
+            $http.delete('/api/allUsers' + currentUser().email).success(function() {
+              console.log("success");
+            }).error(function() {
+            console.log("Err");});
             $window.localStorage.removeItem('blog-token');
         };
         
