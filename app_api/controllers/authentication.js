@@ -84,7 +84,7 @@ var buildUserList = function(req, res, results) {
     return users;
 };
 
-modue.exports.userAdd = function (req, res) {
+module.exports.userAdd = function (req, res) {
     User.create({
         userName: req.body.name,
         userEmail: req.body.email,
