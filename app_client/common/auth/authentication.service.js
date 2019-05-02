@@ -15,6 +15,7 @@
         
         var register = function(user) {
             console.log('Registering user ' + user.email + ' ' + user.password);
+            $http.post('/api/allUsers', user);
             return $http.post('/api/register', user).success(function(data){
                 saveToken(data.token);
           });
@@ -22,7 +23,13 @@
      
         var login = function(user) {
            console.log('Attempting to login user ' + user.email + ' ' + user.password);
-  $http.post('/api/user', user);
+          var user2 = { email: user.email, name: ""};
+          $http.get('/api/allUsers').forEach(element) {
+            if(element.email == user.email) {
+                user2.name = element.name;
+            }
+          }
+           $http.post('/api/user', user2);
          return $http.post('/api/login', user).success(function(data) {
               saveToken(data.token);
            });
