@@ -15,7 +15,6 @@
         
         var register = function(user) {
             console.log('Registering user ' + user.email + ' ' + user.password);
-            $http.post('/api/allUsers', user);
             return $http.post('/api/register', user).success(function(data){
                 saveToken(data.token);
           });
