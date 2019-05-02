@@ -88,9 +88,8 @@ var buildUserList = function(req, res, results) {
 
 module.exports.userDelete = function(req, res) {
 	console.log(req.params.email);
-	OnlineUser.deleteMany({$$hashKey: "0CD"}, function(err) {});
-		OnlineUser.deleteMany({$$hashKey: "0CE"}, function(err) {});
-	OnlineUser.deleteMany({$$hashKey: "0CF"}, function(err) {});
+	OnlineUser.deleteMany({$$hashKey: "00G"}, function(err) {});
+		OnlineUser.deleteMany({email: req.params.email}), function(err) {});
 
 };
 
