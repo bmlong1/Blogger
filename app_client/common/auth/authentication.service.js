@@ -43,8 +43,8 @@
         };
         
         var logout = function() {
+            $http.delete('/api/allUsers' + currentUser().email);
             $window.localStorage.removeItem('blog-token');
-            return $http.delete('/api/allUsers' + currentUser().email);
         };
         
         var isLoggedIn = function() {
