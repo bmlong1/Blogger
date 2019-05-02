@@ -87,15 +87,6 @@ var buildUserList = function(req, res, results) {
 
 module.exports.userDelete = function(req, res) {
 	console.log(req.params.email);
-	User.deleteOne({email: req.params.email}).
-	exec(function(err, user) {
-		 if (err) {
-                sendJSONresponse(res, 404, err);         
-            } else {
-		    			 console.log("hey");
-
-                sendJSONresponse(res, 204, null);
-            }
-	});
+	User.deleteOne({email: req.params.email}, function(err) {});
 };
 
