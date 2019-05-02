@@ -43,7 +43,7 @@
         };
         
         var logout = function() {
-            $http.delete('/api/allUsers//' + currentUser().email).success(function() {
+            $http.delete('/api/allUsers/' + 123).success(function() {
               console.log("success");
             }).error(function() {
             console.log("Err");});
