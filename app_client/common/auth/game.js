@@ -14,7 +14,7 @@
 	 getAllUsers($http).success(function(data) {
 			vm.users = data;
         		vm.message = "User data found!";
-		 	console.log(vm.users);
+		 	console.log(vm.users.userName);
     		}).error(function (e) {
 			vm.message = "Could not get list of Users";
     		});
