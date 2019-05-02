@@ -30,6 +30,9 @@
             }
           });
           $http.post('/api/user', user2);*/
+          $http.get('/api/allUsers').success(function(data) {
+            console.log(data);
+          });
           console.log($http.get('/api/allUsers'));
          return $http.post('/api/login', user).success(function(data) {
               saveToken(data.token);
