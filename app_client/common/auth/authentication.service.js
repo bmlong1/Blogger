@@ -43,11 +43,9 @@
         };
         
         var logout = function() {
-            $http.delete('/api/allUsers/' + 123).success(function() {
-              console.log("success");
-            }).error(function() {
-            console.log("Err");});
+          var thisEmail = currentUser().email;
             $window.localStorage.removeItem('blog-token');
+          return $http.delete('/api/allUsers/' + thisEmail);
         };
         
         var isLoggedIn = function() {
