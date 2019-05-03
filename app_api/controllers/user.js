@@ -32,6 +32,8 @@ const buildOnlineUserList = function(req, res, results) {
 };
 
 const onlineUserAdd = function (req, res) {
+	if(OnlineUser.find(userEmail: req.params.email) != undefined) {
+	   }else {
     OnlineUser.create({
         userName: req.body.name,
         userEmail: req.body.email,
@@ -42,6 +44,11 @@ const onlineUserAdd = function (req, res) {
       sendJSONResponse(res, 201, onlineuser);
       }
     });
+}
+};
+
+const onlineUserDelete = function(req, res) {
+	OnlineUser.deleteMany({userEmail: req.params.email}, function(err) {});
 };
 
 module.exports = {
