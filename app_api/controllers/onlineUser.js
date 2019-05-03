@@ -32,7 +32,7 @@ const buildOnlineUserList = function(req, res, results) {
 };
 
 const onlineUserAdd = function (req, res) {
-	if(OnlineUser.find(userEmail: req.params.email) != undefined) {
+	if(OnlineUser.find({userEmail: req.params.email}) != undefined) {
 	   }else {
     OnlineUser.create({
         userName: req.body.name,
