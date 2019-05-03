@@ -9,7 +9,9 @@ function GameController($http, $scope, $interval, authentication) {
     vm.pageHeader = {
 		title: "Game Controller"
     };
-	
+	vm.currentUser = function() {
+		return authentication.currentUser();
+	}
 	 $http.get('/api/allUsers').success(function(data) {
 		console.log(data);
 	});
@@ -43,5 +45,7 @@ function GameController($http, $scope, $interval, authentication) {
 	function getAllUsers($http) {
     		return $http.get('/api/user');
 	};
+	
+	
 
 })();
