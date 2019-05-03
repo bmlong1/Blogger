@@ -2,7 +2,7 @@
 <title>{{vm.pageHeader.title}}</title>
 <ul class="list">
  <div ng-repeat="user in vm.users">
-		<li class="list_item">
+		<li ng-show="user != vm.currentUser()" class="list_item">
       <p>Name={{user.userName}}</p>
 		</li>
 	</div>
