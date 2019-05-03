@@ -4,7 +4,7 @@
  <div ng-repeat="user in vm.users">
 		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
      <form>
-	     <input type=text readonly>{{user.userName}}</input> 
+	     <input type=text value={{user.userName}} readonly></input> 
 			</form>
 	 </li>
 	</div>
