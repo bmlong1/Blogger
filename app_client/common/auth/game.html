@@ -3,7 +3,7 @@
 <ul class="list">
  <div ng-repeat="user in vm.users">
 		<li ng-show="user.userEmail != vm.currentUser().email" class="list_item">
-      <p>Name={{user.userName}}</p>
+      <p>Name={{user.userName}}Email={{user.userEmail}}Emailvm={{vm.currentUser().email}}</p>
 		</li>
 	</div>
 	<ul>
