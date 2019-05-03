@@ -7,7 +7,8 @@ GameController.$inject = ['$http', '$scope', '$interval', 'authentication'];
 function GameController($http, $scope, $interval, authentication) {
 	var vm = this;
     vm.pageHeader = {
-		title: "Game Controller"
+		title: "Play a Game",
+	    	heading: "Who would you like to play a game with?"
     };
 	vm.currentUser = function() {
 		return authentication.currentUser();
