@@ -53,5 +53,6 @@ const onlineUserDelete = function(req, res) {
 
 module.exports = {
     onlineUserList,
-    onlineUserAdd
+    onlineUserAdd,
+    onlineUserDelete
 };
