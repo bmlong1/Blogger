@@ -33,18 +33,18 @@ app.config( function($routeProvider, $locationProvider) {
         })
 	
 		.when('/register', {
-			templateUrl: '/common/auth/register.html',
+			templateUrl: '/auth/register.html',
 			controller: 'RegisterController',
 			controllerAs: 'vm'
 		})
 		
 		.when('/login', {
-			templateUrl: '/common/auth/login.html',
+			templateUrl: '/auth/login.html',
 			controller: 'LoginController',
 			controllerAs: 'vm'
 		})
 	.when('/game', {
-		templateUrl: '/common/auth/game.html',
+		templateUrl: '/game/game.html',
 		controller: 'GameController',
 		controllerAs: 'vm'
 	})
