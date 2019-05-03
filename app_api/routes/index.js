@@ -19,5 +19,5 @@ router.post('/login', ctrlAuth.login);
 router.get('/allUsers', ctrlAuth.userList);
 router.post('/user', ctrlOnlineUser.onlineUserAdd);
 router.get('/user', ctrlOnlineUser.onlineUserList);
-router.delete('/allUsers/:email', ctrlOnlineUser.userDelete);
+router.delete('/user/:email', ctrlOnlineUser.onlineUserDelete);
 module.exports = router;
