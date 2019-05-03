@@ -22,11 +22,6 @@ function GameController($http, $scope, $interval, authentication) {
     		}).error(function (e) {
 			vm.message = "Could not get list of Users";
     		});
-}
-
-	function getAllUsers($http) {
-    		return $http.get('/api/user');
-	};
 	
 	// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
@@ -43,4 +38,10 @@ function GameController($http, $scope, $interval, authentication) {
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	
 	
+}
+
+	function getAllUsers($http) {
+    		return $http.get('/api/user');
+	};
+
 })();
