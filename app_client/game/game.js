@@ -19,7 +19,7 @@ function GameController($http, $scope, $interval, authentication) {
         		data.userName = userForm.userName.value;
    			vm.playGameQuestion[data.userName] = true;
     	}
-	console.log[vm.playGameQuestion];
+	console.log(vm.playGameQuestion);
 	if(vm.playGameQuestion[authentication.currentUser().name] == true) {
 		console.log("This is what i want");
 		alert("hey there");
