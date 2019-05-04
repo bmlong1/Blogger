@@ -13,6 +13,22 @@ function GameController($http, $scope, $interval, authentication) {
 	vm.currentUser = function() {
 		return authentication.currentUser();
 	}
+		
+	vm.submit = function() {
+        		var data;
+        		data.userName = userForm.userName.value;
+   			vm.playGameQuestion[data.userName] = true;
+    	}
+	
+	if(vm.playGameQuestion[currentUser().name] == true) {
+		console.log("This is what i want");
+		alert("hey there");
+		
+	}
+	
+	
+	
+	
 	 $http.get('/api/allUsers').success(function(data) {
 		console.log(data);
 	});
