@@ -12,14 +12,15 @@ function GameController($http, $scope, $interval, authentication) {
     };
 	vm.currentUser = function() {
 		return authentication.currentUser();
-	}
-		
+	};
+	
 	vm.submit = function() {
         		var data;
         		data.userName = userForm.userName.value;
 			return data.userName;
-    	}
-	console.log(vm.submit());
+    	};
+	console.log(vm.currentUser);
+	console.log(vm.submit);
 	
 	
 	
