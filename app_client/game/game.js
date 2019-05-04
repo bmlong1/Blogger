@@ -17,7 +17,7 @@ function GameController($http, $scope, $interval, authentication) {
 	vm.submit = function() {
         		var data;
         		data.userName = userForm.userName.value;
-   			var vm.playGameQuestion;
+   			var vm.playGameQuestion = [];
 			vm.playGameQuestion[data.userName] = true;
     	}
 	console.log(vm.playGameQuestion);
