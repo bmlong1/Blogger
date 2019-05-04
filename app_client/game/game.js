@@ -19,7 +19,7 @@ function GameController($http, $scope, $interval, authentication) {
         		data.userName = userForm.userName.value;
 			return data.userName;
     	}
-	console.log(vm.submit);
+	console.log(vm.submit());
 	
 	
 	
