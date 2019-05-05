@@ -1,14 +1,14 @@
 <h1>{{vm.pageHeader.heading}}</h1>
 <title>{{vm.pageHeader.title}}</title>
-<ul class="list">
+<!-- <ul class="list">
  <div ng-repeat="user in vm.users">
-		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
+		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">-->
      	<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
 		<div class="form-group">
-			<input type="text" id="userName" name="userName" placeholder={{user.userName}}></input>
+			<input type="text" id="userName" name="userName" placeholder="Bri"></input>
 			</div>
-	     		<input class="button" type="submit" value={{user.userName}}></input> 
+	     		<input class="button" type="submit" value="bri"></input> 
 	</form>
 	 </li>
-	</div>
-</ul>
+	<!--</div>
+</ul>-->
