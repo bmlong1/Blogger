@@ -31,15 +31,14 @@
                                             
         var isPlayingGame = function(player) {
           $http.get('/api/gameUsers').success(function(data) {
-          var ele =  data.forEach(function(element) {
+          data.forEach(function(element) {
              if(element.challenger == player || element.player == player) {
                return true;
              }
            });
+            return false;
           });
-          if(ele == true) {
-            return true;}
-          
+    
         }
                                             
                                             
