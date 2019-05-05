@@ -34,6 +34,7 @@
            data.forEach(function(element) {
              if(element.challenger == player || element.player == player) {
                return true;
+             }
            });
           });
           return false;
