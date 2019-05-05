@@ -30,14 +30,7 @@
         };
                                             
         var gamePlayers = function(user) {
-               $http.get('/api/gameUsers').success(function(data) {
-                console.log(data.forEach(function(element) {
-         
-                   if((element.challenger == user) || (element.player == user)){
-                      return true;
-                      }
-                 }););
-               });
+               return $http.get('/api/gameUsers/' + user);
         };               
                                             
         var login = function(user) {
