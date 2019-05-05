@@ -6,23 +6,21 @@
 GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
-
 		
-	vm.currentUser = function() {
-		return authentication.currentUser();
-	};
-	
-	if (authentication.gamePlayers(vm.currentUser().name)) {
-		$location.url('/game-board');
-		
-		}
-	
 	vm.pageHeader = {
 		title: "Play a Game",
 	    	heading: "Who would you like to play a game with?"
-    };
+    	};
+	
+	vm.currentUser = function() {
+		return authentication.currentUser();
+	};
 
-	 getAllUsers($http).success(function(data) {
+	if ($http.get('/api/gameUsers/' + vm.currentUser().email) {
+		$location.url('/game-board');	
+	}
+	
+	 getAllUsers.success(function(data) {
 			vm.users = data;
         		vm.message = "User data found!";
 	
@@ -44,17 +42,16 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	
 	vm.submit = function() {
-		vm.userName = userForm.userrr.value;
-			authentication.startGame(authentication.currentUser().name, vm.userName).success(function(){
+		vm.userName = userForm.userName.value;
+		vm.userEmail = userForm.userEmail.value;
+		$http.post('/api/gameUsers/' + vm.currentUser().name + "/" + vm.currentUser().email 
+			   + vm.userName + vm.userEmail).success(function(){
 			$location.url('/game-board');
 			});
     	};
 }
-
-	function getAllUsers($http) {
-    		return $http.get('/api/user');
-	};
-	
-	
+ getAllUsers = function($http) {
+	$http.get('/api/user');
+};
 
 })();
