@@ -12,7 +12,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		return authentication.currentUser();
 	};
 	
-	if (authentication.gamePlayer(vm.currentUser().name)) {
+	if (authentication.gamePlayers(vm.currentUser().name)) {
 		$location.url('/game-board');
 		
 		}
