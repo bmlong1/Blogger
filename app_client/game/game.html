@@ -5,7 +5,10 @@
 <ul class="list">
  <div ng-repeat="user in vm.users">
 		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
-	     		<input class="button" name = "button" type="submit" value={{user.userName}}></input> 
+	     		<input class="button" type="submit" hidden="hidden">
+			<input ng-click="val={{user.userName}}" class="button" name="button" type="button" value={{user.userName}}></input>
+	<input hidden="hidden" value={{val}}></input>
+	</input>
 </li>
 	</div>
 </ul>
