@@ -14,7 +14,7 @@ function GameController($http, $scope, $interval, authentication) {
 		return authentication.currentUser();
 	};
 	
-	vm.submit = function(data) {
+	vm.submit = function() {
       		var data;
 		console.log(userForm.userName.value);
         		data.userName = userForm.userName.value;
