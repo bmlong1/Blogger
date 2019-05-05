@@ -24,6 +24,8 @@
                                             
                                             
         var startGame = function(challenger, player) {
+          console.log(challenger);
+          console.log(player);
           return $http.post('/api/gameUsers', challenger, player).success(function(data) {
           });
         };
