@@ -6,23 +6,19 @@
 GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
+	vm.currentUser = function() {
+		return authentication.currentUser();
+	};
 	vm.gamePlayers = function() {
-		$http.get('/api/gameUsers').success(function(data) {
-		data.forEach(function(element) {
-			if((element.challenger == vm.currentUser().name) || (element.player == vm.currentUser().name)) {
+		if (authentication.gamePlayer(vm.currentUser().name)) {
 		$location.url('/game-board');
 			}
-		});
-		});
 	};
 	
 	vm.pageHeader = {
 		title: "Play a Game",
 	    	heading: "Who would you like to play a game with?"
     };
-	vm.currentUser = function() {
-		return authentication.currentUser();
-	};
 
 	 getAllUsers($http).success(function(data) {
 			vm.users = data;
