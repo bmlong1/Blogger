@@ -15,7 +15,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	};
 	
 	vm.isPlayingGame = function() {
-		return authentication.isPlayingGame(vm.currentUser());
+		return authentication.isPlayingGame(vm.currentUser().name);
 	};
 	console.log(vm.isPlayingGame());
 	if(vm.isPlayingGame() == true) {
