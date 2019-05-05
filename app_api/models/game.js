@@ -7,4 +7,4 @@ var onlineUserGame = new mongoose.Schema({
     playerEmail: String
 });
 
-mongoose.model('GameUsers', onlineUserGame);
+mongoose.model('Game', onlineUserGame);
