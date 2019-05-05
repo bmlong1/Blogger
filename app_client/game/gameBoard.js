@@ -10,7 +10,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	
     vm.pageHeader = {
 		title: "Battle Ship",
-	    	heading:"challenge" + vm.challenger()
+	    	heading:"challenge" + vm.challenger() + "hey"
     }; 
 
 	$http.get('/api/game').success(function(data) {
