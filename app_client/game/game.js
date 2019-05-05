@@ -48,7 +48,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	
 	vm.submit = function() {
 		vm.userName = userForm.userName.value;
-		vm.userEmail = userForm.userEmail.value
+		vm.userEmail = userForm.userEmail.value;
 		console.log(vm.userEmail);
 		/*$http.post('/api/game/' + vm.currentUser().name + "/" + vm.currentUser().email + "/" +
 			   + vm.userName + "/" + vm.userEmail).success(function(){
