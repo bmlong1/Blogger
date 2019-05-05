@@ -15,7 +15,9 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.currentUser = function() {
 		return authentication.currentUser();
 	};
-	console.log($http.get('/api/game/' +vm.currentUser().email));
+	$http.get('/api/game/'+vm.currentUser().email).success(function(data) {
+		console.log(data);
+	});
 	if ($http.get('/api/game/' + vm.currentUser().email)) {
 		$location.url('/game-board');	
 	}
