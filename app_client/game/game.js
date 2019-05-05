@@ -3,8 +3,8 @@
   angular
     .module('bloggerApp')
     .controller('GameController', GameController);
-GameController.$inject = ['$http', '$scope', '$interval', 'authentication'];
-function GameController($http, $scope, $interval, authentication) {
+GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
+function GameController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
     vm.pageHeader = {
 		title: "Play a Game",
