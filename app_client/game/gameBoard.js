@@ -35,4 +35,8 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	
 	
 }
+
+	function getGamers($http) {
+		return $http.get('/api/game');
+	};
 })();
