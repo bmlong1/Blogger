@@ -36,8 +36,9 @@
                    console.log(element.challenger);
                    console.log(element.player);
                    if((element.challenger == user) || (element.player == user)){
-                     console.log("true");
                       return true;
+                                          console.log("true");
+
                       }
                  });
                });
