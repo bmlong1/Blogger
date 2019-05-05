@@ -14,8 +14,10 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		return authentication.currentUser();
 	};
 	
-	vm.isPlayingGame = function() {
-		console.log(authentication.isPlayingGame);
+	vm.gamePlayers = function() {
+		console.log(authentication.gamePlayers());
+		return authentication.gamePlayers();
+
 	};
 	if(vm.isPlayingGame() == true) {
 		$location.url('/game-board');
