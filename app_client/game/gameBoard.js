@@ -7,11 +7,12 @@ GameBoardController.$inject = ['$http', '$scope', '$interval', '$location', 'aut
 function GameBoardController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
 	vm.challenger = function() {
+		vm.game = [];
 		getGamers($http).success(function(data) {
 			data.forEach(function(element) {
 				console.log(element.challengerEmail);
 				if(element.challengerEmail == vm.currentUser().email) {
-					return vm.currentUser().name;
+					vm.game.challengerName = vm.currentUser().name;
 				} else if (element.playerEmail == vm.currentUser().email){
 					return element.challengerName;
 				}
@@ -21,7 +22,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	
     vm.pageHeader = {
 		title: "Battle Ship",
-	    	heading:"challenge" + vm.challenger() + "hey"
+	    	heading:"challenge" + vm.challenger() + vm.game.challengerName + "hey"
     }; 
 
 	$http.get('/api/game').success(function(data) {
