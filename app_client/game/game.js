@@ -44,7 +44,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	*/
 	
 	vm.submit = function() {
-		console.log(userForm.list.ng-scope);
+		console.log(userForm.list.repe;
 		
 		/*		data.userName = userForm.userName.value;
 			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
