@@ -1,5 +1,5 @@
 <h1>{{vm.pageHeader.heading}}</h1>
-<title>{{vm.pageHeader.title}}</title>
+<title onload="vm.gamePlayers()">{{vm.pageHeader.title}}</title>
 		<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
 <ul class="list" name="list">
  <div name="repe"ng-repeat="user in vm.users">
