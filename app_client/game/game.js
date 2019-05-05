@@ -43,11 +43,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	*/
 	vm.submit = function() {
-		userForm.forEach(function(element) {
-			if (element.userrr.checked == "checked") {
-				console.log(element.userrr);
-			}
-		});
+		
 			console.log(userForm);
         /*		data.userName = userForm.userName.value;
 			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
