@@ -56,10 +56,10 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			});
 		});
 		console.log(vm.userEmail);
-		$http.post('/api/game/' + vm.currentUser().name + "/" + vm.currentUser().email + "/" +
+		/*$http.post('/api/game/' + vm.currentUser().name + "/" + vm.currentUser().email + "/" +
 			   + vm.userName + "/" + vm.userEmail).success(function(){
 			$location.url('/game-board');
-			});
+			});*/
     	};
 
 }
