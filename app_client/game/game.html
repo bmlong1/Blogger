@@ -2,15 +2,13 @@
 <title>{{vm.pageHeader.title}}</title>
 <ul class="list">
  <div ng-repeat="user in vm.users">
-
-		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
-				 		     	<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
-
+	<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
+		<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
 			<label>{{user.userName}}</label>
 			<input type="checkbox" class="userrr" name="userrr" value={{user.userName}}><input>
-<input type="submit" name="button" class="button" value="Play"></input>
+		<input type="submit" name="button" class="button" value="Play"></input>
 		</form>
-					</li>
+		</li>
 	</div>
 </ul>
 
