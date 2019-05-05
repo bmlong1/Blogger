@@ -8,7 +8,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	var vm = this;
 	
 	vm.otherPlayer = function() {
-		return authentication.otherPlayer();
+		return authentication.otherPlayer(vm.currentUser());
 	};
 	
     vm.pageHeader = {
