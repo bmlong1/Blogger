@@ -9,10 +9,10 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	vm.challenger = function() {
 		getGamers($http).success(function(data) {
 			data.forEach(function(element) {
-				if(challengerEmail == vm.currentUser().email) {
+				if(element.challengerEmail == vm.currentUser().email) {
 					return vm.currentUser().name;
-				} else if (playerEmail == vm.currentUser().email){
-					return challengerName;
+				} else if (element.playerEmail == vm.currentUser().email){
+					return element.challengerName;
 				}
 			});
 		});
