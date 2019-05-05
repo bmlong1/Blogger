@@ -28,7 +28,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			vm.message = "Could not get list of Users";
     		});
 	
-	// Refreshes lists of users periodically					  
+	/*// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
 			console.log("Interval occurred");
 			getAllUsers($http)
@@ -41,7 +41,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			});								  
 		}
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
-	
+	*/
 	vm.submit = function() {
 		console.log(userForm.userName.value);
         /*		data.userName = userForm.userName.value;
