@@ -23,6 +23,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		});
 		});
 	};
+	console.log(vm.gamePlayers());
 	if(vm.gamePlayers() == true) {
 		$location.url('/game-board');
 	}
