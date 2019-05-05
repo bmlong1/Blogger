@@ -9,8 +9,16 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	
 	
     vm.pageHeader = {
-		title: "Battle Ship"
+		title: "Battle Ship",
+	    	heading:"challenge"
     };
+
+
+
+	vm.currentUser = function() {
+	return authentication.currentUser();
+	};
+	
 	
 	
 }
