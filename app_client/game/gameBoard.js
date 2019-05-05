@@ -6,7 +6,17 @@
 GameBoardController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameBoardController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
-	
+	vm.challenger = function() {
+		getGamers($http).success(function(data) {
+			data.forEach(function(element) {
+				if(challengerEmail == vm.currentUser().email) {
+					return vm.currentUser().name;
+				} else if (playerEmail == vm.currentUser().email){
+					return challengerName;
+				}
+			});
+		});
+	};
 	
     vm.pageHeader = {
 		title: "Battle Ship",
@@ -21,17 +31,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	return authentication.currentUser();
 	};
 	
-	vm.challenger = function() {
-		getGamers($http).success(function(data) {
-			data.forEach(function(element) {
-				if(challengerEmail == vm.currentUser().email) {
-					return vm.currentUser().name;
-				} else if (playerEmail == vm.currentUser().email){
-					return challengerName;
-				}
-			});
-		});
-	};
+	
 	
 	
 }
