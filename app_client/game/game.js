@@ -48,7 +48,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	
 	vm.submit = function() {
 		vm.userName = userForm.userName.value;
-		getOnlineUsers.success(function(data) {
+		getOnlineUsers($http).success(function(data) {
 			console.log(data);
 		});
 		/*$http.post('/api/game/' + vm.currentUser().name + "/" + vm.currentUser().email + "/" +
