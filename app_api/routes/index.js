@@ -24,9 +24,9 @@ router.post('/user', ctrlOnlineUser.onlineUserAdd);
 router.get('/user', ctrlOnlineUser.onlineUserList);
 router.delete('/user/:email', ctrlOnlineUser.onlineUserDelete);
 
-router.post('/gameUsers/:challengerName/:challengerEmail/:playerName/:playerEmail', ctrlGameUsers.onlineUserStartGame);
-router.get('/gameUsers', ctrlGameUsers.onlineUserGameList);
-router.delete('/gameUsers/:challengerEmail/:playerEmail', ctrlGameUsers.onlineUserDeleteGame);
-router.get('/gameUsers/:playerEmail', ctrlGameUsers.isAPlayer);
+router.post('/game/:challengerName/:challengerEmail/:playerName/:playerEmail', ctrlGameUsers.onlineUserStartGame);
+router.get('/game', ctrlGameUsers.onlineUserGameList);
+router.delete('/game/:challengerEmail/:playerEmail', ctrlGameUsers.onlineUserDeleteGame);
+router.get('/game/:playerEmail', ctrlGameUsers.isAPlayer);
 
 module.exports = router;
