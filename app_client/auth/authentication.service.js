@@ -30,16 +30,16 @@
         };
                                             
         var isPlayingGame = function(player) {
-var playing;          $http.get('/api/gameUsers').success(function(data) {
+      var playing = false;          
+          $http.get('/api/gameUsers').success(function(data) {
          playing = data.forEach(function(element) {
              if(element.challenger == player || element.player == player) {
-               console.log("true to return");
                return true;
              }
            });
-            return false;
           });
-return playing;        }
+          return playing;        
+        }
                                             
                                             
                                             
