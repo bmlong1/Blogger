@@ -5,7 +5,7 @@
 		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
      	<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
 		<input type="hidden" id="userName" name="userName" value={{user.userName}}></input>
-	     <input class="button" type=submit>{{user.userName}}</input> 
+	     <input class="button" type="submit" value={{user.userName}}></input> 
 	</form>
 	 </li>
 	</div>
