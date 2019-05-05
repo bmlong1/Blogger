@@ -110,6 +110,7 @@
           currentUser : currentUser,
           users : users,
           startGame: startGame,
+          otherPlayer: otherPlayer,
           gamePlayers: gamePlayers
         };
 }
