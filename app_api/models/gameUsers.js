@@ -1,8 +1,10 @@
 var mongoose = require('mongoose');
 
 var onlineUserGame = new mongoose.Schema({
-    challenger: String,
-    player: String
+    challengerName: String,
+    challengerEmail: String,
+    playerName: String,
+    playerEmail
 });
 
 mongoose.model('GameUsers', onlineUserGame);
