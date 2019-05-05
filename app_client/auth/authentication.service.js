@@ -31,7 +31,7 @@
                                             
         var isPlayingGame = function(player) {
           $http.get('/api/gameUsers').success(function(data) {
-            if(data.contains(player){
+            if(data.contains(player)){
                console.log(player);
           }
             console.log(data);
