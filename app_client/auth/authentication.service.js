@@ -30,8 +30,11 @@
         };
                                             
         var isPlayingGame = function(player) {
-          var players = $http.get('/api/gameUsers');
-          console.log(players);
+          $http.get('/api/gameUsers').success(function(data) {
+            console.log(data);
+          }).error(function(err) {
+            console.log("prob");
+          });
           return false;
           
         }
