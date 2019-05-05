@@ -6,7 +6,8 @@
 	<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
 			<label>{{user.userName}}</label>
 			<input type="radio" name="userName" value={{user.userName}}></input>
-		</li>
+	<input type="radio" name"userEmail" value={{user.userEmail}}></input>	
+	</li>
 	</div>
 </ul>
 <input type="submit" name="button" class="button" value="Play"></input>
