@@ -71,5 +71,6 @@ function getChallenger($http, email){
 	$http.get('/challenge/' + email).success(function(data) {
 		return data;
 	});
+};
 
 })();
