@@ -15,14 +15,17 @@ router.post('/blogs', auth, ctrlBlog.blogCreate);
 router.get('/blogs/:blogid', ctrlBlog.blogReadOne);
 router.put('/blogs/:blogid', auth, ctrlBlog.blogUpdateOne);
 router.delete('/blogs/:blogid', auth, ctrlBlog.blogDeleteOne);
+
 router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 router.get('/allUsers', ctrlAuth.userList);
+
 router.post('/user', ctrlOnlineUser.onlineUserAdd);
 router.get('/user', ctrlOnlineUser.onlineUserList);
 router.delete('/user/:email', ctrlOnlineUser.onlineUserDelete);
-router.post('/gameUsers/:challenger/:player', ctrlGameUsers.onlineUserStartGame);
+
+router.post('/gameUsers/:challengerName/:challengerEmail/:playerName/:playerEmail', ctrlGameUsers.onlineUserStartGame);
 router.get('/gameUsers', ctrlGameUsers.onlineUserGameList);
-router.delete('/gameUsers/:challenger/:player', ctrlGameUsers.onlineUserDeleteGame);
+router.delete('/gameUsers/:challengerEmail/:playerEmail', ctrlGameUsers.onlineUserDeleteGame);
 router.get('/gameUsers/:playerEmail', ctrlGameUsers.isAPlayer);
 module.exports = router;
