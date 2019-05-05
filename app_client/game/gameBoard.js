@@ -16,7 +16,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	});
     vm.pageHeader = {
 		title: "Battle Ship",
-	    	heading:"challenge" + vm.challengerEmail
+	    	heading:"challenge" 
     }; 
 	
 }
