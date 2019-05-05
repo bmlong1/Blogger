@@ -4,6 +4,7 @@ const GameUsers = mongoose.model('GameUsers');
 var sendJSONResponse = function(res, status, content) {
     res.status(status);
     res.json(content);
+	console.log(content);
 };
 
 
