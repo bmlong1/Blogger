@@ -10,8 +10,8 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	
     vm.pageHeader = {
 		title: "Battle Ship",
-	    	heading:"challenge"
-    };
+	    	heading:"challenge" + vm.challenger()
+    }; 
 
 	$http.get('/api/game').success(function(data) {
 	console.log(data);
@@ -21,6 +21,17 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	return authentication.currentUser();
 	};
 	
+	vm.challenger = function() {
+		getGamers($http).success(function(data) {
+			data.forEach(function(element) {
+				if(challengerEmail == vm.currentUser().email) {
+					return vm.currentUser().name;
+				} else if (playerEmail == vm.currentUser().email){
+					return challengerName;
+				}
+			});
+		});
+	};
 	
 	
 }
