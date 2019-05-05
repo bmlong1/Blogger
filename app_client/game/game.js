@@ -19,11 +19,6 @@ function GameController($http, $scope, $interval, authentication) {
         		data.userName = userForm.userName.value;
 			return data.userName;
     	};
-	console.log(vm.currentUser);
-	console.log(vm.submit);
-	
-	
-	
 	
 	 $http.get('/api/allUsers').success(function(data) {
 		console.log(data);
