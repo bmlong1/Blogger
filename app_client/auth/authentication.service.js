@@ -96,7 +96,8 @@
           logout : logout,
           isLoggedIn : isLoggedIn,
           currentUser : currentUser,
-          users : users
+          users : users,
+          startGame: startGame
         };
 }
 })();
