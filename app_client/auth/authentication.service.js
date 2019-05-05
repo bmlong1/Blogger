@@ -35,6 +35,7 @@
           data.forEach(function(element) {
              if(element.challenger == player || element.player == player) {
                playing = true;
+               console.log(playing);
              }
            });
           });
