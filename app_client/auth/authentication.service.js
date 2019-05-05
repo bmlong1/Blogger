@@ -84,6 +84,18 @@
           }
         };
                                             
+        var otherPlayer = function(user) {
+          $http.get('api/gameUsers').success(function(data){
+            data.forEach(function(element) {
+              if(element.challenger == user) {
+                return element.player;
+              } else if (element.player == user) {
+                return element.challenger;
+              }
+            });
+          });
+        };
+                                            
         var users = function() {
         return $http.get('/api/user');
         }
