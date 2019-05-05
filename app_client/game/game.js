@@ -47,7 +47,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		console.log(userForm.userrr);
 		userForm.userrr.forEach(function(element) {
 			if(element.checked == "checked") {
-			console.log(element);
+			console.log(element.value);
 			}
 		});
 		
