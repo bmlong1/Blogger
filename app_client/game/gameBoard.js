@@ -10,12 +10,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 		vm.game = [];
 		getGamers($http).success(function(data) {
 			data.forEach(function(element) {
-				console.log(element.challengerEmail);
-				if(element.challengerEmail == vm.currentUser().email) {
-					vm.game.challengerName = vm.currentUser().name;
-				} else if (element.playerEmail == vm.currentUser().email){
-					return element.challengerName;
-				}
+				console.log(element);
 			});
 		});
 	};
@@ -39,6 +34,6 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 }
 
 	function getGamers($http) {
-		return $http.get('/api/game');
+		return $http.get('/api/game/' + vm.currentUser().email);
 	};
 })();
