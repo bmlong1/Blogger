@@ -36,7 +36,8 @@ const buildOnlineUserGameList = function(req, res, results) {
 
 
 const onlineUserStartGame = function(req, res) {
-	console.log(req.body.challenger);
+	console.log(req.body);
+	console.log(req.body.params);
 	GameUsers.create({
 		challenger: req.body.challenger,
 		player: req.body.player
