@@ -15,7 +15,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	};
 	
 	vm.gamePlayers = function() {
-		return $http.get('/api/gameUsers').success(function(data) {
+		$http.get('/api/gameUsers').success(function(data) {
 		data.forEach(function(element) {
 			if((element.challenger == vm.currentUser()) || (element.player == vm.currentUser())) {
 				console.log("true");
