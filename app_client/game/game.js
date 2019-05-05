@@ -16,11 +16,13 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		return authentication.currentUser();
 	};
 	$http.get('/api/game/'+vm.currentUser().email).success(function(data) {
-		console.log(data);
+		if(data.length > 0) {
+				$location.url('/game-board');	
+
+		}
+		
 	});
-	if ($http.get('/api/game/' + vm.currentUser().email)) {
-		$location.url('/game-board');	
-	}
+	
 	
 	 getOnlineUsers($http).success(function(data) {
 			vm.users = data;
