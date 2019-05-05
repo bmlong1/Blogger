@@ -6,6 +6,9 @@
 GameBoardController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameBoardController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
+	vm.currentUser = function() {
+	return authentication.currentUser();
+	};
 	
 	
 	$http.get('/api/game/' + vm.currentUser().email).success(function(data) {
@@ -15,15 +18,6 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 		title: "Battle Ship",
 	    	heading:"challenge" + vm.challengerEmail
     }; 
-
-	vm.currentUser = function() {
-	return authentication.currentUser();
-	};
-	
-
-	
-	
-	
 	
 }
 
