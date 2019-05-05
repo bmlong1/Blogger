@@ -30,22 +30,8 @@
         };
                                             
         var isPlayingGame = function(player) {
-      var playing = false;          
-          $http.get('/api/gameUsers').success(function(data) {
-          data.forEach(function(element) {
-             if(element.challenger == player || element.player == player) {
-               playing = true;
-               console.log(playing);
-             }
-                    console.log(playing);
-           });
-                           console.log(playing);
-
-          });
-                         console.log(playing);
-
-          return playing;        
-        }
+         return $http.get('/api/gameUsers');
+        };
                                             
                                             
                                             
