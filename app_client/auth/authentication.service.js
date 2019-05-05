@@ -32,8 +32,10 @@
         var gamePlayers = function(user) {
                $http.get('/api/gameUsers').success(function(data) {
                  data.forEach(function(element) {
+                   console.log(user);
+                   console.log(element.challenger);
+                   console.log(element.player);
                    if((element.challenger == user) || (element.player == user)){
-                     console.log("hey");
                       return true;
                       }
                  });
