@@ -8,18 +8,18 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	var vm = this;
 	
 	
+	$http.get('/api/game/' + vm.currentUser().email).success(function(data) {
+		vm.challengerEmail = data[0].challengerEmail;
+	});
     vm.pageHeader = {
 		title: "Battle Ship",
-	    	heading:"challenge" 
+	    	heading:"challenge" + vm.challengerEmail; 
     }; 
 
 	vm.currentUser = function() {
 	return authentication.currentUser();
 	};
 	
-	$http.get('/api/game/' + vm.currentUser().email).success(function(data) {
-	console.log(data);
-	});
 
 	
 	
