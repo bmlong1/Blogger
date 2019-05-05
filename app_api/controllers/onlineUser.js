@@ -18,7 +18,26 @@ const onlineUserList = function (req, res) {
         }
         sendJSONResponse(res, 200, buildOnlineUserList(req, res, results));
     });
-};        
+};    
+
+
+
+const otherPlayer = function(req,res) {
+GameUsers.find({userName: req.params.name}, userEmail, function(err, results) {
+	if (!results) {
+           sendJSONResponse(res, 404, {
+               "message" : "No users found"
+           });
+        } else if (err) {
+            sendJSONResponse(res, 404, err);
+            return;
+        }
+	sendJSONResponse(res, 200, results);
+});
+};
+
+
+
 
 const buildOnlineUserList = function(req, res, results) {
     var onlineUsers = [];
@@ -55,5 +74,6 @@ const onlineUserDelete = function(req, res) {
 module.exports = {
     onlineUserList,
     onlineUserAdd,
-    onlineUserDelete
+    onlineUserDelete,
+	otherPlayer
 };
