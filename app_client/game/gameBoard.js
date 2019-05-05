@@ -6,10 +6,6 @@
 GameBoardController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameBoardController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
-    vm.pageHeader = {
-		title: "Battle Ship",
-	    	heading: "You " + vm.challengerOrPlayer() + vm.otherPlayer() + " to play a game of Battle Ship."
-    };
 	vm.challengerOrPlayer = function() {
 		$http.get('/api/gamUsers').success(function(data) {
 			data.forEach(function(element) {
@@ -32,6 +28,11 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 			});
 		});
 	};
+	
+    vm.pageHeader = {
+		title: "Battle Ship",
+	    	heading: "You " + vm.challengerOrPlayer() + vm.otherPlayer() + " to play a game of Battle Ship."
+    };
 	
 	vm.currentUser = function() {
 		return authentication.currentUser();
