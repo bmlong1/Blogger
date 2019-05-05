@@ -23,6 +23,7 @@ router.get('/allUsers', ctrlAuth.userList);
 router.post('/user', ctrlOnlineUser.onlineUserAdd);
 router.get('/user', ctrlOnlineUser.onlineUserList);
 router.delete('/user/:email', ctrlOnlineUser.onlineUserDelete);
+router.get('/challenger/:name', ctrlOnlineUser.otherPlayer);
 
 router.post('/game/:challengerName/:challengerEmail/:playerName/:playerEmail', ctrlGameUsers.onlineUserStartGame);
 router.get('/game', ctrlGameUsers.onlineUserGameList);
