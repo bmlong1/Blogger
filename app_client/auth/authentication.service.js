@@ -20,6 +20,19 @@
           });
         };
      
+            
+                                            
+                                            
+        var wantToPlayGame = function(challenger, player) {
+          return $http.post('/api/userGame', challenger, player).success(function(data) {
+          });
+        };
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
         var login = function(user) {
            console.log('Attempting to login user ' + user.email + ' ' + user.password);
           var user2 = { email: user.email, name: ""};
