@@ -29,14 +29,9 @@
           return $http.post('/api/gameUsers/' + challenger + "/" + player);
         };
                                             
-        var isPlayingGame = function(player) {
+        var gamePlayers = function() {
          return $http.get('/api/gameUsers');
-        };
-                                            
-                                            
-                                            
-                                            
-                                            
+        };               
                                             
         var login = function(user) {
            console.log('Attempting to login user ' + user.email + ' ' + user.password);
@@ -103,7 +98,7 @@
           currentUser : currentUser,
           users : users,
           startGame: startGame,
-          isPlayingGame: isPlayingGame
+          gamePlayers: gamePlayers
         };
 }
 })();
