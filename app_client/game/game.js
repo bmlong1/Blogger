@@ -19,7 +19,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		data.forEach(function(element) {
 			console.log(vm.currentUser());
 			console.log(element.challenger);
-			if((element.challenger == vm.currentUser()) || (element.player == vm.currentUser())) {
+			if((element.challenger == vm.currentUser().name) || (element.player == vm.currentUser().name)) {
 				console.log("true");
 			return true;
 			}
