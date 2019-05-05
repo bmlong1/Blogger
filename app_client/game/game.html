@@ -5,11 +5,9 @@
 <ul class="list">
  <div ng-repeat="user in vm.users">
 		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
-			<input ng-click="val=user.userName" class="button" name="button" type="button" value={{user.userName}}>
-	 			     		<input class="button" type="submit" hidden="hidden"></input>
-	<input name="val" hidden="hidden" value={{val}}></input>
-	</input>
+			<input checked="unchecked" class="button" name="button" type="checkbox" value={{user.userName}}>
 </li>
 	</div>
 </ul>
+<input type="submit" name="button" class="button">Play</input>
 		</form>
