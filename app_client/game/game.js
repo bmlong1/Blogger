@@ -48,7 +48,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	
 	vm.submit = function() {
 		vm.userName = userForm.userName.value;
-		vm.email = $http.get('/challenger/'+vm.currentUser().email);
+		vm.email = $http.get('/challenge/'+vm.currentUser().email);
 			getOnlineUsers($http).success(function(data) {
 			data.forEach(function(element) {
 				if(element.userName == vm.userName) {
