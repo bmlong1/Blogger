@@ -6,7 +6,8 @@
 GameBoardController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameBoardController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
-		vm.challengerOrPlayer() = $http.get('/api/gameUsers').success(function(data) {
+		vm.challengerOrPlayer = function() {
+			$http.get('/api/gameUsers').success(function(data) {
 			data.forEach(function(element) {
 				if(element.challenger == vm.currentUser()) {
 					console.log("challenge");
@@ -17,6 +18,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 				}
 			});
 		});
+		};
 	
 	vm.otherPlayer = function() {
 		$http.get('/api/gameUsers').success(function(data) {
