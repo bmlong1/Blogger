@@ -98,5 +98,6 @@ module.exports = {
 	onlineUserStartGame,
 	onlineUserDeleteGame,
 	onlineUserGameList, 
-	isAPlayer
+	isAPlayer,
+	challenger
 };
