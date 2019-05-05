@@ -5,9 +5,9 @@
 		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
 		     	<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
 <div class="form-group">
-			<input type="text" class="userName" name="userName" placeholder="Bri"></input>
+			<input type="text" class="userName" name="userName" value="{{user.userName}}" readonly></input>
 			</div>
-	     		<input class="button" type="submit" value="bri"></input> 
+	     		<input class="button" type="submit" value="{{user.userName}}"></input> 
 		</form>
 
 	</div>
