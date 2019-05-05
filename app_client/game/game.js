@@ -6,11 +6,11 @@
 GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
-	console.log("hey");
 	vm.currentUser = function() {
 		return authentication.currentUser();
 	};
 	vm.gamePlayer = function() {
+			console.log("hey");
 		if (authentication.gamePlayer(vm.currentUser().name)) {
 		$location.url('/game-board');
 			}
