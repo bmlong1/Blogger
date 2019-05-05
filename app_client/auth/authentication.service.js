@@ -19,20 +19,7 @@
                 saveToken(data.token);
           });
         };
-     
-            
-                                            
-                                            
-        var startGame = function(challenger, player) {
-          console.log(challenger);
-          console.log(player);
-          return $http.post('/api/gameUsers/' + challenger + "/" + player);
-        };
-                                            
-        var gamePlayers = function(user) {
-               return $http.get('/api/gameUsers/' + user);
-        };               
-                                            
+                                                              
         var login = function(user) {
            console.log('Attempting to login user ' + user.email + ' ' + user.password);
           var user2 = { email: user.email, name: ""};
@@ -83,23 +70,7 @@
             };
           }
         };
-                                            
-        var otherPlayer = function(user) {
-          $http.get('api/gameUsers').success(function(data){
-            data.forEach(function(element) {
-              if(element.challenger == user) {
-                return element.player;
-              } else if (element.player == user) {
-                return element.challenger;
-              }
-            });
-          });
-        };
-                                            
-        var users = function() {
-        return $http.get('/api/user');
-        }
-
+                                                                                   
         return {
           saveToken : saveToken,
           getToken : getToken,
@@ -107,11 +78,7 @@
           login : login,
           logout : logout,
           isLoggedIn : isLoggedIn,
-          currentUser : currentUser,
-          users : users,
-          startGame: startGame,
-          otherPlayer: otherPlayer,
-          gamePlayers: gamePlayers
+          currentUser : currentUser
         };
 }
 })();
