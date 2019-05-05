@@ -18,6 +18,7 @@ const onlineUserGameList = function (req, res) {
             sendJSONResponse(res, 404, err);
             return;
         }
+	 console.log(results);
         sendJSONResponse(res, 200, buildOnlineUserGameList(req, res, results));
     });
 };        
