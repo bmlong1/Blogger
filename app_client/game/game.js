@@ -29,7 +29,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
     		});
 	
 	$http.get('/api/gameUsers').success(function(data) {
-		console.log(data);
+		console.log(data[0]);
 	});
 	
 	// Refreshes lists of users periodically					  
