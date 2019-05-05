@@ -28,7 +28,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			vm.message = "Could not get list of Users";
     		});
 	
-	/*// Refreshes lists of users periodically					  
+	// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
 			console.log("Interval occurred");
 			getAllUsers($http)
@@ -41,11 +41,10 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			});								  
 		}
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
-	*/
 	
 	vm.submit = function() {
-		vm.data.userName = userForm.userrr.value;
-			authentication.startGame(vm.currentUser().name, vm.data.userName).success(function(){
+		vm.userName = userForm.userrr.value;
+			authentication.startGame(vm.currentUser().name, vm.userName).success(function(){
 			$location.url('/blog-list');
 			});
     	};
