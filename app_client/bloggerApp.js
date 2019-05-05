@@ -48,6 +48,11 @@ app.config( function($routeProvider, $locationProvider) {
 		controller: 'GameController',
 		controllerAs: 'vm'
 	})
+	.when('/game-board', {
+		templateUrl: '/game/game-board.html',
+		controller: 'GameBoardController',
+		controllerAs: 'vm'
+	})
 		
 		.otherwise({redirectTo: '/'});
 	$locationProvider.html5Mode(true).hashPrefix('!');
