@@ -27,7 +27,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
     		}).error(function (e) {
 			vm.message = "Could not get list of Users";
     		});
-	
+	console.log($http.get('/api/gameUsers'));
 	// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
 			getOnlineUsers($http)
