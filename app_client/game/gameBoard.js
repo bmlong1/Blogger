@@ -8,7 +8,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	var vm = this;
     vm.pageHeader = {
 		title: "Battle Ship",
-	    	heading: "You " + vm.challengeOrPlayer() + vm.otherPlater() " to play a game of Battle Ship."
+	    	heading: "You " + vm.challengeOrPlayer() + vm.otherPlayer() " to play a game of Battle Ship."
     };
 	vm.challengerOrPlayer = function() {
 		$http.get('/api/gamUsers').success(function(data) {
