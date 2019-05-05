@@ -1,8 +1,8 @@
 <h1>{{vm.pageHeader.heading}}</h1>
 <title>{{vm.pageHeader.title}}</title>
 		<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
-<ul class="list">
- <div ng-repeat="user in vm.users">
+<ul class="list" name="list">
+ <div name="repe"ng-repeat="user in vm.users">
 	<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
 			<label>{{user.userName}}</label>
 			<input type="checkbox" class="userrr" name="userrr" value={{user.userName}}><input>
