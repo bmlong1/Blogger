@@ -20,4 +20,5 @@ router.get('/allUsers', ctrlAuth.userList);
 router.post('/user', ctrlOnlineUser.onlineUserAdd);
 router.get('/user', ctrlOnlineUser.onlineUserList);
 router.delete('/user/:email', ctrlOnlineUser.onlineUserDelete);
+router.post('/userGame', ctrlOnlineUser.onlineUserStartGame);
 module.exports = router;
