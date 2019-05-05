@@ -48,14 +48,15 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	
 	vm.submit = function() {
 		vm.userName = userForm.userName.value;
-		getOnlineUsers($http).success(function(data) {
+		vm.email = $http.get('/challenger/'+vm.currentUser().email);
+			getOnlineUsers($http).success(function(data) {
 			data.forEach(function(element) {
 				if(element.userName == vm.userName) {
 				vm.userEmail = element.userEmail;
 				}
 			});
 		});
-		console.log(vm.userEmail);
+		console.log(vm.email);
 		/*$http.post('/api/game/' + vm.currentUser().name + "/" + vm.currentUser().email + "/" +
 			   + vm.userName + "/" + vm.userEmail).success(function(){
 			$location.url('/game-board');
