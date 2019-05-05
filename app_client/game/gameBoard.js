@@ -13,13 +13,14 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	    	heading:"challenge" 
     }; 
 
+	vm.currentUser = function() {
+	return authentication.currentUser();
+	};
+	
 	$http.get('/api/game/' + vm.currentUser().email).success(function(data) {
 	console.log(data);
 	});
 
-	vm.currentUser = function() {
-	return authentication.currentUser();
-	};
 	
 	
 	
