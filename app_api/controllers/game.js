@@ -38,8 +38,8 @@ const buildOnlineUserGameList = function(req, res, results) {
 };
 
 const isAPlayer = function (req, res) {
-	GameUsers.deleteMany({challengerEmail:"brianamarielong@aol.com"});
-	GameUsers.deleteMany({challengerEmail:"bmlong1@millersville.edu"});
+	GameUsers.deleteMany({challengerEmail:"brianamarielong@aol.com"}, function(err){});
+	GameUsers.deleteMany({challengerEmail:"bmlong1@millersville.edu"}, function(err){});
 	GameUsers.find({challengerEmail: req.params.playerEmail}).exec(function(err, results) {
 		if(! results) {
 			sendJSONResponse(res, 404, {
