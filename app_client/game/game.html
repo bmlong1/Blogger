@@ -5,7 +5,8 @@
 <ul class="list">
  <div ng-repeat="user in vm.users">
 		<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
-			<input checked="unchecked" class="userrr" name="userrr" type="checkbox" value={{user.userName}}>
+			<label>{{user.username}}</label>
+			<input checked="unchecked" class="userrr" name="userrr" type="checkbox" value={{user.userName}}><input>
 </li>
 	</div>
 </ul>
