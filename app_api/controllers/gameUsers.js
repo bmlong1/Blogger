@@ -35,7 +35,7 @@ const buildOnlineUserGameList = function(req, res, results) {
 };
 
 const isAPlayer = function (req, res) {
-	GameUsers.find({Name: req.params.player}).exec(function(err, results) {
+	GameUsers.find({Email: req.params.playerEmail}).exec(function(err, results) {
 		if(! results) {
 			sendJSONResponse(res, 404, {
 				"message" : "user is not in a game"
