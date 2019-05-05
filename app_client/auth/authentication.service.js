@@ -37,8 +37,13 @@
                playing = true;
                console.log(playing);
              }
+                    console.log(playing);
            });
+                           console.log(playing);
+
           });
+                         console.log(playing);
+
           return playing;        
         }
                                             
