@@ -43,7 +43,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	*/
 	vm.submit = function() {
-		
+		console.log(userForm.length);
  console.log(userForm[1].userrr);
 		console.log(userForm);
 		/*		data.userName = userForm.userName.value;
