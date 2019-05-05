@@ -19,7 +19,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		return authentication.gamePlayers();
 
 	};
-	if(vm.isPlayingGame() == true) {
+	if(vm.gamePlayers() == true) {
 		$location.url('/game-board');
 	}
 	 
