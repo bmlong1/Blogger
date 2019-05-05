@@ -15,7 +15,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.currentUser = function() {
 		return authentication.currentUser();
 	};
-
+	console.log($http.get('/api/game/' +vm.currentUser().email()));
 	if ($http.get('/api/game/' + vm.currentUser().email)) {
 		$location.url('/game-board');	
 	}
@@ -28,9 +28,6 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			vm.message = "Could not get list of Users";
     		});
 	
-	$http.get('/api/game').success(function(data) {
-		console.log(data[0]);
-	});
 	
 	// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
