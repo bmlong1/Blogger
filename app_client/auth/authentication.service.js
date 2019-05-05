@@ -23,8 +23,8 @@
             
                                             
                                             
-        var wantToPlayGame = function(challenger, player) {
-          return $http.post('/api/userGame', challenger, player).success(function(data) {
+        var startGame = function(challenger, player) {
+          return $http.post('/api/gameUsers', challenger, player).success(function(data) {
           });
         };
                                             
