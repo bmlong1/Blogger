@@ -33,6 +33,7 @@
                $http.get('/api/gameUsers').success(function(data) {
                  data.forEach(function(element) {
                    if((element.challenger == user) || (element.player == user)){
+                     console.log("hey");
                       return true;
                       }
                  });
