@@ -13,7 +13,9 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	    	heading:"challenge"
     };
 
-
+	$http.get('/api/game').success(function(data) {
+	console.log(data);
+	});
 
 	vm.currentUser = function() {
 	return authentication.currentUser();
