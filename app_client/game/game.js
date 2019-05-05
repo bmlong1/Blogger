@@ -15,7 +15,10 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	};
 	
 	vm.gamePlayers = function() {
-		console.log(authentication.gamePlayers());
+		console.log($http.get('/api/gameUsers'));
+		$http.get('/api/gameUsers').success(function(data) {
+			console.log(data);
+		});
 		return authentication.gamePlayers();
 
 	};
