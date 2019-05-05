@@ -49,12 +49,16 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.submit = function() {
 		vm.userName = userForm.userName.value;
 		getOnlineUsers($http).success(function(data) {
-			console.log(data);
+			data.forEach(function(element) {
+				if(element.userName == vm.userName) {
+				vm.userEmail = element.userEmail;
+				}
+			});
 		});
-		/*$http.post('/api/game/' + vm.currentUser().name + "/" + vm.currentUser().email + "/" +
+		$http.post('/api/game/' + vm.currentUser().name + "/" + vm.currentUser().email + "/" +
 			   + vm.userName + "/" + vm.userEmail).success(function(){
 			$location.url('/game-board');
-			});*/
+			});
     	};
 
 }
