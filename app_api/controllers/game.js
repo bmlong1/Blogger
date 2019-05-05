@@ -8,7 +8,19 @@ var sendJSONResponse = function(res, status, content) {
 };
 
 
-
+const challenger = function(req,res) {
+GameUsers.find({challengerEmail: req.params.email}, challengerEmail, function(err, results) {
+	if (!results) {
+           sendJSONResponse(res, 404, {
+               "message" : "No users found"
+           });
+        } else if (err) {
+            sendJSONResponse(res, 404, err);
+            return;
+        }
+	sendJSONResponse(res, 200, results);
+});
+};
 const onlineUserGameList = function (req, res) {
     GameUsers.find().exec(function(err, results) {
         if (!results) {
@@ -38,9 +50,6 @@ const buildOnlineUserGameList = function(req, res, results) {
 };
 
 
-const challengerName = function(req, res, results) {
-    return results.obj.challengerName;
-};							     
 								     
 const isAPlayer = function (req, res) {
 	/*GameUsers.deleteMany({challengerEmail:"brianamarielong@aol.com"}, function(err){});
@@ -85,5 +94,6 @@ module.exports = {
 	onlineUserStartGame,
 	onlineUserDeleteGame,
 	onlineUserGameList, 
-	isAPlayer
+	isAPlayer,
+	challenger
 };
