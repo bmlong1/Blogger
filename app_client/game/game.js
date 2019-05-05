@@ -46,7 +46,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		
  console.log(userForm[0].userrr);
 		userForm.forEach(function(element) {
-			console.log(element)l
+			console.log(element);
 		});
 		/*		data.userName = userForm.userName.value;
 			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
