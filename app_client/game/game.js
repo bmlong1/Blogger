@@ -10,15 +10,12 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		$http.get('/api/gameUsers').success(function(data) {
 		data.forEach(function(element) {
 			if((element.challenger == vm.currentUser().name) || (element.player == vm.currentUser().name)) {
-			return true;
+		$location.url('/game-board');
 			}
 		});
 		});
 	};
-	 
-if(vm.gamePlayers() == true) {
-		$location.url('/game-board');
-	}
+	
 	vm.pageHeader = {
 		title: "Play a Game",
 	    	heading: "Who would you like to play a game with?"
