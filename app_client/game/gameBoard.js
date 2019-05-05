@@ -13,6 +13,9 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	
 	$http.get('/api/game/' + vm.currentUser().email).success(function(data) {
 		vm.challengerEmail = data[0].challengerEmail;
+		vm.challengerName = data[0].challengerName;
+		vm.playerEmail = data[0].playerEmail;
+		vm.playerName = data[0].playerName;
 	});
     vm.pageHeader = {
 		title: "Battle Ship",
