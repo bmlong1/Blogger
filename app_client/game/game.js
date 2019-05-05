@@ -5,6 +5,9 @@
     .controller('GameController', GameController);
 GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameController($http, $scope, $interval, $location, authentication) {
+	if(vm.gamePlayers() == true) {
+		$location.url('/game-board');
+	}
 	var vm = this;
     vm.pageHeader = {
 		title: "Play a Game",
@@ -17,19 +20,12 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.gamePlayers = function() {
 		$http.get('/api/gameUsers').success(function(data) {
 		data.forEach(function(element) {
-			console.log(vm.currentUser());
-			console.log(element.challenger);
 			if((element.challenger == vm.currentUser().name) || (element.player == vm.currentUser().name)) {
-				console.log("true");
 			return true;
 			}
 		});
 		});
 	};
-	console.log(vm.gamePlayers());
-	if(vm.gamePlayers() == true) {
-		$location.url('/game-board');
-	}
 	 
 	 getAllUsers($http).success(function(data) {
 			vm.users = data;
