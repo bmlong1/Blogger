@@ -33,6 +33,7 @@
           $http.get('/api/gameUsers').success(function(data) {
            data.forEach(function(element) {
              console.log(element);
+             console.log(element.challenger);
            });
             console.log(data);
           }).error(function(err) {
