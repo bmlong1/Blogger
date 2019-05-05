@@ -52,8 +52,10 @@ const isAPlayer = function (req, res) {
 
 const onlineUserStartGame = function(req, res) {
 	GameUsers.create({
-		challenger: req.params.challenger,
-		player: req.params.player
+		challengerName: req.params.challengerName,
+		challengerEmail: req.params.challengerEmail,
+		playerName: req.params.playerName,
+		playerEmail: req.params.playerEmail
 	}, function(err, gameUsers) {
 		if(err) {
 			sendJSONResponse(res, 400, err);
@@ -64,7 +66,7 @@ const onlineUserStartGame = function(req, res) {
 };
 
 const onlineUserDeleteGame = function(req, res) {
-	GameUsers.deleteMany({challenger: req.params.challenger, player: req.params.player}, function(err) {});
+	GameUsers.deleteMany({challengerEmail: req.params.challengerEmail, playerEmail: req.params.playerEmail}, function(err) {});
 };
 
 
