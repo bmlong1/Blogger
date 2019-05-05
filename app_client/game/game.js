@@ -6,17 +6,6 @@
 GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
-if(vm.gamePlayers() == true) {
-		$location.url('/game-board');
-	}
-	vm.pageHeader = {
-		title: "Play a Game",
-	    	heading: "Who would you like to play a game with?"
-    };
-	vm.currentUser = function() {
-		return authentication.currentUser();
-	};
-	
 	vm.gamePlayers = function() {
 		$http.get('/api/gameUsers').success(function(data) {
 		data.forEach(function(element) {
@@ -27,6 +16,17 @@ if(vm.gamePlayers() == true) {
 		});
 	};
 	 
+if(vm.gamePlayers() == true) {
+		$location.url('/game-board');
+	}
+	vm.pageHeader = {
+		title: "Play a Game",
+	    	heading: "Who would you like to play a game with?"
+    };
+	vm.currentUser = function() {
+		return authentication.currentUser();
+	};
+
 	 getAllUsers($http).success(function(data) {
 			vm.users = data;
         		vm.message = "User data found!";
