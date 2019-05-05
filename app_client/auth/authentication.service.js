@@ -29,8 +29,14 @@
           return $http.post('/api/gameUsers/' + challenger + "/" + player);
         };
                                             
-        var gamePlayers = function() {
-         return $http.get('/api/gameUsers');
+        var gamePlayers = function(user) {
+               $http.get('/api/gameUsers').success(function(data) {
+                 data.forEach(function(element) {
+                   if((element.challenger == user) || (element.player == user) {
+                      return true;
+                      }
+                 });
+               });
         };               
                                             
         var login = function(user) {
