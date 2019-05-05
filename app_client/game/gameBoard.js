@@ -10,8 +10,10 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 		$http.get('/api/gameUsers').success(function(data) {
 			data.forEach(function(element) {
 				if(element.challenger == vm.currentUser()) {
+					console.log("challenge");
 					return "challenged ";
 				} else {
+					console.log("player");
 					return "were challenged by ";
 				}
 			});
