@@ -8,7 +8,7 @@ var auth = jwt({
 var ctrlBlog = require('../controllers/blogs');
 var ctrlAuth = require('../controllers/authentication');
 var ctrlOnlineUser = require('../controllers/onlineUser');
-var ctrlGameUsers = require('../controlles/gameUsers');
+var ctrlGameUsers = require('../controllers/gameUsers');
 
 router.get('/blogs', ctrlBlog.blogList);
 router.post('/blogs', auth, ctrlBlog.blogCreate);
