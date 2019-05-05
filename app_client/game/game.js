@@ -14,14 +14,6 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		return authentication.currentUser();
 	};
 	
-	vm.submit = function() {
-      		var data;
-		console.log(userForm.userName.value);
-        		data.userName = userForm.userName.value;
-			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
-			$location.url('/blog-list');
-			});
-    	};
 	
 	 $http.get('/api/allUsers').success(function(data) {
 		console.log(data);
@@ -50,7 +42,14 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		}
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	
-	
+	vm.submit = function() {
+      		var data;
+		console.log(userForm.userName.value);
+        		data.userName = userForm.userName.value;
+			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
+			$location.url('/blog-list');
+			});
+    	};
 }
 
 	function getAllUsers($http) {
