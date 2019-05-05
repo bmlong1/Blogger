@@ -43,9 +43,12 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	*/
 	vm.submit = function() {
-		console.log(userForm.length);
- console.log(userForm[1].userrr);
-		console.log(userForm);
+for(var i = 0; i <= userForm.length) {
+	if(userForm[i].userrr == checked) {
+		console.log(userForm[i].userrr);
+	}
+}
+		
 		/*		data.userName = userForm.userName.value;
 			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
 			$location.url('/blog-list');
