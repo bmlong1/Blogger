@@ -15,12 +15,13 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	};
 	
 	vm.gamePlayers = function() {
-		console.log($http.get('/api/gameUsers'));
 		$http.get('/api/gameUsers').success(function(data) {
-			console.log(data);
+		data.forEach(function(element) {
+			if((element.challenger == vm.currentUser()) || (element.player == vm.currentUser())) {
+			return true;
+			}
 		});
-		return authentication.gamePlayers();
-
+		});
 	};
 	if(vm.gamePlayers() == true) {
 		$location.url('/game-board');
