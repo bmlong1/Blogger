@@ -34,6 +34,21 @@ const buildOnlineUserGameList = function(req, res, results) {
     return onlineUsers;
 };
 
+const isAPlayer = function (req, res) {
+	GameUsers.find({Name: req.params.player}).exec(function(err, results) {
+		if(! resukts) {
+			sendJSONResponse(res, 404, {
+				"message" : "user is not in a game"
+			});
+		} else if(err) {
+			sendJSONResponse(res, 404, err);
+			return;
+		} 
+		console.log(results);
+		sendJSONResponse(res, 200, results);
+	});
+};
+
 
 const onlineUserStartGame = function(req, res) {
 	GameUsers.create({
@@ -56,5 +71,6 @@ const onlineUserDeleteGame = function(req, res) {
 module.exports = {
 	onlineUserStartGame,
 	onlineUserDeleteGame,
-	onlineUserGameList
+	onlineUserGameList, 
+	isAPlayer
 };
