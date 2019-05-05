@@ -9,7 +9,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.currentUser = function() {
 		return authentication.currentUser();
 	};
-	window.onload = function() {
+	vm.gamePlayer = function() {
 		if (authentication.gamePlayer(vm.currentUser().name)) {
 		$location.url('/game-board');
 			}
