@@ -10,4 +10,5 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		title: "Game Board",
 	    	heading: "Game Board"
     };
+}
 })();
