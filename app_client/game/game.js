@@ -51,7 +51,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
     	};
 }
  getAllUsers = function($http) {
-	$http.get('/api/user');
+	return $http.get('/api/user');
 };
 
 })();
