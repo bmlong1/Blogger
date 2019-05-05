@@ -44,17 +44,11 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	*/
 	
 	vm.submit = function() {
-		console.log(userForm.userrr.value);
-		userForm.userrr.forEach(function(element) {
-			if(element.checked == "checked") {
-			console.log(element.value);
-			}
-		});
-		
-		/*		data.userName = userForm.userName.value;
+		var data;
+		data.userName = userForm.userrr.value;
 			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
 			$location.url('/blog-list');
-			});*/
+			});
     	};
 }
 
