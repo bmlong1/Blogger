@@ -5,7 +5,8 @@
  <div name="repe"ng-repeat="user in vm.users">
 	<li ng-show="user.userEmail != vm.currentUser().email && user.userEmail != undefined " class="list_item">
 			<label>{{user.userName}}</label>
-			<input type="radio" class="userrr" name="userrr" value={{user.userName}}><input>
+			<input type="radio" name="userName" value={{user.userName}}></input>
+	<input type="text" hidden="hidden" value={{user.userEmail}}</input>
 		</li>
 	</div>
 </ul>
