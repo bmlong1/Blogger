@@ -44,7 +44,8 @@ if(vm.gamePlayers() == true) {
 			  })
 			  .error(function (e) {
 				vm.message = "Could not get list of users";
-			});								  
+			});	
+			vm.gamePlayers();
 		}
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	
