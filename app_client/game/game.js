@@ -46,7 +46,8 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		userForm.forEach(function(element) {
 			if (element.userrr.checked == "checked") {
 				console.log(element.userrr);
-			});
+			}
+		});
 			console.log(userForm);
         /*		data.userName = userForm.userName.value;
 			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
