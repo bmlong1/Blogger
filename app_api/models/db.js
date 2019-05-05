@@ -50,4 +50,4 @@ process.on('SIGTERM', function() {
 require('./blogs');
 require('./users');
 require('./onlineUsers');
-require('./gameUsers');
+require('./game');
