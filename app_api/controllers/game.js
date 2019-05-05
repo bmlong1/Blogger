@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const GameUsers = mongoose.model('GameUsers');
+const GameUsers = mongoose.model('Game');
 
 var sendJSONResponse = function(res, status, content) {
     res.status(status);
