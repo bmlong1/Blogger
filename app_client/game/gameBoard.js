@@ -8,13 +8,13 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	var vm = this;
     vm.pageHeader = {
 		title: "Battle Ship",
-	    	heading: "You " + vm.challengerOrPlayer() + vm.otherPlayer() " to play a game of Battle Ship."
+	    	heading: "You " + vm.challengerOrPlayer() + vm.otherPlayer() + " to play a game of Battle Ship."
     };
 	vm.challengerOrPlayer = function() {
 		$http.get('/api/gamUsers').success(function(data) {
 			data.forEach(function(element) {
 				if(element.challenger == vm.currentUser()) {
-					return "challenged";
+					return "challenged ";
 				} else {
 					return "were challenged by ";
 				}
