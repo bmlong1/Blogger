@@ -45,7 +45,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	
 	vm.submit = function() {
 for(var i = 0; i < userForm.length; i++) {
-	if(userForm[i].userrr.checked == "checked") {
+	if(userForm[i].userrr.checked == "unchecked") {
 		console.log(userForm[i].userrr.value);
 	}
 }
