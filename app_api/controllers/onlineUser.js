@@ -83,7 +83,7 @@ const onlineUserAdd = function (req, res) {
 };
 
 const onlineUserStartGame = function(req, rea) {
-	GameUsers.create){
+	GameUsers.create({
 		challenger: req.body.challenger,
 		player: req.body.player
 	}, function(err, gameUsers) {
