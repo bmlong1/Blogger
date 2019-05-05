@@ -5,11 +5,11 @@
     .controller('GameController', GameController);
 GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameController($http, $scope, $interval, $location, authentication) {
-	if(vm.gamePlayers() == true) {
+	var vm = this;
+if(vm.gamePlayers() == true) {
 		$location.url('/game-board');
 	}
-	var vm = this;
-    vm.pageHeader = {
+	vm.pageHeader = {
 		title: "Play a Game",
 	    	heading: "Who would you like to play a game with?"
     };
