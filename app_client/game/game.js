@@ -14,13 +14,13 @@ function GameController($http, $scope, $interval, authentication) {
 		return authentication.currentUser();
 	};
 	
-	vm.submit = function() {
+	vm.submit = function(data) {
       		var data;
 		console.log(userForm.userName.value);
-        		/*data.userName = userForm.userName.value;
+        		data.userName = userForm.userName.value;
 			authentication.startGame(vm.currentUser().name, data.userName).success(function(){
 			$location.url('/blog-list');
-			});*/
+			});
     	};
 	
 	 $http.get('/api/allUsers').success(function(data) {
