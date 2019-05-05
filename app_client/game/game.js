@@ -20,7 +20,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		$location.url('/game-board');	
 	}
 	
-	 getAllUsers.success(function(data) {
+	 getAllUsers().success(function(data) {
 			vm.users = data;
         		vm.message = "User data found!";
 	
