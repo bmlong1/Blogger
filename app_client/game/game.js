@@ -6,6 +6,9 @@
 GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
+	window.onload = function() {
+		vm.gamePlayer();
+	};
 	vm.currentUser = function() {
 		return authentication.currentUser();
 	};
