@@ -5,6 +5,11 @@ body {
   color: #7BCE52;
 }
 
+.box{
+border: 2px solid black;
+}
+
+
 smaller {
   font-size: 15px;
 }
