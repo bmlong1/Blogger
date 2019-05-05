@@ -20,7 +20,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		$location.url('/game-board');	
 	}
 	
-	 getAllUsers().success(function(data) {
+	 getOnlineUsers().success(function(data) {
 			vm.users = data;
         		vm.message = "User data found!";
 	
@@ -30,7 +30,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	
 	// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
-			getAllUsers($http)
+			getOnlineUsers($http)
 			  .success(function(data) {
 				vm.users = data;
 				vm.message = "Users list found!";
@@ -49,8 +49,9 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			$location.url('/game-board');
 			});
     	};
+
 }
- getAllUsers = function($http) {
+function getOnlineUsers($http) {
 	return $http.get('/api/user');
 };
 
