@@ -40,20 +40,7 @@ const buildOnlineUserGameList = function(req, res, results) {
 
 const challengerName = function(req, res, results) {
     return results.obj.challengerName;
-};
-
-
-const challenger = function(req, res) {
-	GameUsers.find({challengerEmail: req.params.playerEmail.exec(function(err, results){
-		if(! results) {
-			GameUsers.find({playerEmail:req.params.playerEmail. exec(function(err, results) {
-				sendJSONResponse(res, 200, challenger(results));
-			});
-		}
-		sendJSONResponse(res, 200, challenger(results));
-		});
-};
-								     
+};							     
 								     
 const isAPlayer = function (req, res) {
 	/*GameUsers.deleteMany({challengerEmail:"brianamarielong@aol.com"}, function(err){});
@@ -98,6 +85,5 @@ module.exports = {
 	onlineUserStartGame,
 	onlineUserDeleteGame,
 	onlineUserGameList, 
-	isAPlayer,
-	challenger
+	isAPlayer
 };
