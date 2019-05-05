@@ -28,9 +28,11 @@ const buildOnlineUserGameList = function(req, res, results) {
     var onlineUsers = [];
     results.forEach(function(obj) {
         onlineUsers.push({
-           challenger: obj.challenger,
-	   player: obj.player
-        });
+           challengerName: obj.challengerName,
+	   challengerEmail: obj.challengerEmail,
+ 	   playerName: obj.playerName,
+	   playerEmail: obj.playerEmail
+	});
     });
     return onlineUsers;
 };
