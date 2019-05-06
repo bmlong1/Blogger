@@ -18,10 +18,12 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 		vm.playerName = data[0].playerName;
 	});
 	
-	$http.get('/api/otherPlayer/' + vm.currentUser().email).success(function(data) {
-		console.log(data);
-	});
-    vm.pageHeader = {
+	if(vm.currentUser().email == vm.challengerEmail) {
+		vm.otherPlayerName = vm.playerName;
+	}
+if(vm.currentUser().email == vm.playerEmail) {
+		vm.otherPlayerName = vm.challengerName;
+	}    vm.pageHeader = {
 		title: "Battle Ship"
     }; 
 	
