@@ -12,10 +12,10 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	
 	vm.markTile = function() {
 		if (vm.currentUser().email == vm.challengerEmail) {
-			return "x";
+			vm.printLetter = "x";
 		}
 		if (vm.currentUser().email == vm.playerEmail) {
-			return "o";
+			vm.printLetter = "o";
 		}
 	};
 	
