@@ -11,6 +11,7 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	};
 	
 	vm.markTile = function() {
+		vm.printLetter = undefined;
 		if (vm.currentUser().email == vm.challengerEmail) {
 			vm.printLetter = "x";
 		}
