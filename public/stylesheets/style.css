@@ -17,13 +17,17 @@ body {
     margin: 1px;
 }
 
-.background {
+.background .background2 {
+    display: inline-block;
     width: 312px;
     height: 300px;
- //   float: left;
     position: relative;
+    margin-right: 50px;
 }
+.background {
+    margin-right: 50px;
 
+}
 .back{
 margin: auto;
 }
