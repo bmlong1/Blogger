@@ -13,7 +13,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 
 	
 	vm.yourPlayer = function() {
-		if(vm.x == currentUser()) {
+		if(vm.x == vm.currentUser()) {
 			return "X's";
 		}
 	};
