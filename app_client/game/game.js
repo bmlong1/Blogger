@@ -13,11 +13,10 @@ function GameController($http, $scope, $interval, $location, authentication) {
 
 	
 	vm.yourPlayer = function() {
-		console.log(vm.x);
-		console.log(vm.currentUser());
 		if(vm.x.email == vm.currentUser().email) {
-			console.log("true");
 			return "X's";
+		} else if (vm.y.email == vm.currentUser().email) {
+			return "Y's";
 		}
 	};
 		
@@ -40,6 +39,11 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.playerX = function() {
 		vm.x = vm.currentUser();
 		vm.hideX = true;
+	};
+	
+	vm.playerY = function() {
+		vm.y = vm.currentUser();
+		vm.hideY = true;
 	};
 	
 	
