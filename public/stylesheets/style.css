@@ -6,7 +6,7 @@ body {
 }
 .nums{
 display: inline-block;
-  width: 312px;
+  width: 364px;
 }
 .lets {
 }
@@ -34,7 +34,7 @@ display: inline;
 
 .background, .background2 {
     display: inline-block;
-    width: 370px;
+    width: 364px;
     height: 300px;
     position: relative;
     margin-right: 50px;
