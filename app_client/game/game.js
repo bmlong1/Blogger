@@ -7,6 +7,11 @@ GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authenti
 function GameController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
 	
+	vm.currentUser = function() {
+		return authentication.currentUser();
+	};
+
+	
 	vm.yourPlayer = function() {
 		if(vm.x == currentUser()) {
 			return "X's";
@@ -19,10 +24,6 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		other: "You are playing as " + vm.yourPlayer()
     	};
 	
-	vm.currentUser = function() {
-		return authentication.currentUser();
-	};
-
 	
 	vm.noPlayer = function() {
 		if (vm.x == undefined && vm.o == undefined) {
