@@ -16,7 +16,7 @@ display: inline;
   margin-left: 18px;
   margin-right:18px;
 }
-.box, .boxletter{
+.box, .boxLetter{
     width: 50px;
     height: 50px;
     box-sizing: border-box;
