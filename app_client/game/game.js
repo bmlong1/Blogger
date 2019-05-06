@@ -39,18 +39,10 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		vm.hideX = true;
 	};
 	
-	 getOnlineUsers($http).success(function(data) {
-			vm.users = data;
-        		vm.message = "User data found!";
-			console.log(vm.users);
-    		}).error(function (e) {
-			vm.message = "Could not get list of Users";
-    		});
-	
 	
 	// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
-			vm.yourPlayer();	
+//			vm.yourPlayer();	
 		}
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	
