@@ -26,6 +26,11 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		}
 	};
 	
+	vm.playerX = function() {
+		vm.x = vm.currentUser();
+		vm.hideX = true;
+	};
+	
 	 getOnlineUsers($http).success(function(data) {
 			vm.users = data;
         		vm.message = "User data found!";
