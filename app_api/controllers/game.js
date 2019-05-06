@@ -9,7 +9,7 @@ var sendJSONResponse = function(res, status, content) {
 
 
 const challenger = function(req,res) {
-GameUsers.find({challengerEmail: req.params.email}, challengerEmail, function(err, results) {
+GameUsers.find({challengerEmail: req.params.email}.exec(function(err, results) {
 	if (!results) {
            sendJSONResponse(res, 404, {
                "message" : "No users found"
@@ -20,10 +20,10 @@ GameUsers.find({challengerEmail: req.params.email}, challengerEmail, function(er
         }
 	sendJSONResponse(res, 200, results);
 });
-};
+});
 
 const player = function(req,res) {
-GameUsers.find({playerEmail: req.params.email}, playerEmail, function(err, results) {
+GameUsers.find({playerEmail: req.params.email}.exec(function(err, results) {
 	if (!results) {
            sendJSONResponse(res, 404, {
                "message" : "No users found"
@@ -34,7 +34,7 @@ GameUsers.find({playerEmail: req.params.email}, playerEmail, function(err, resul
         }
 	sendJSONResponse(res, 200, results);
 });
-};
+});
 
 const otherPlayer = function(req,res) {
 	console.log("hey");
