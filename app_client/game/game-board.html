@@ -1,120 +1,16 @@
 <h1>{{vm.challengerName}} challenged {{vm.playerName}} to a game of Battle Ship.</h1>
 <title>{{vm.pageHeader.title}}</title>
- <div class="ships">
-  <ul>Your ships
-    <li>Battleship(4)</li>
-    <li>Submarine(3)</li>
-    <li>Destroyer(2)</li>
-  </ul>
-  </div> <div class="back">
 
-<div class="background">
- <div class="nums"
-  <p>Your board</p>
-   <p class="num"></p>
- <p class="num">1</p>
-  <p class="num">2</p>
- <p class="num">3</p>
- <p class="num">4</p>
- <p class="num">5</p>
- <p class="num">6</p>
-</div>
- <div class="boxLetter">A</div>
- <div class="box"></div>
- <div class="box"></div>
- <div class="box"></div>
- <div class="box"></div>
- <div class="box"></div>
- <div class="box"></div>
-  <div class="boxLetter">B</div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="boxLetter">C</div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>  
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="boxLetter">D</div>
-  <div class="box"></div>
-  <div class="box"></div>  
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="boxLetter">E</div>
-  <div class="box"></div>  
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="boxLetter">F</div>  
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>  
-</div>
-  
-  <div class="background2">
-    <div class="nums"
-  <p>{{vm.otherPlayerName()}}'s Board</p>
-   <p class="num"></p>
- <p class="num">1</p>
-  <p class="num">2</p>
- <p class="num">3</p>
- <p class="num">4</p>
- <p class="num">5</p>
- <p class="num">6</p>
-</div>
- <div class="boxLetter">A</div>
- <div class="box"></div>
- <div class="box"></div>
- <div class="box"></div>
- <div class="box"></div>
- <div class="box"></div>
- <div class="box"></div>
-  <div class="boxLetter">B</div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="boxLetter">C</div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>  
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="boxLetter">D</div>
-  <div class="box"></div>
-  <div class="box"></div>  
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="boxLetter">E</div>
-  <div class="box"></div>  
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="boxLetter">F</div>  
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>
-  <div class="box"></div>  
-</div>
+<input ng-click="vm.playerX()" ng-hide="vm.hideX == true" type="button">X's</input>
+<input ng-click="vm.playerO()" ng-hide="vm.hideO == true" type="button">O's</input>
+<div class="tictactoe">
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
 </div>
