@@ -15,7 +15,8 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.currentUser = function() {
 		return authentication.currentUser();
 	};
-	$http.get('/api/game/'+vm.currentUser().email).success(function(data) {
+	vm.redirect = function(){
+		$http.get('/api/game/'+vm.currentUser().email).success(function(data) {
 		console.log("hey");
 		if(data.length > 0) {
 				$location.url('/game-board');	
@@ -23,7 +24,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		}
 		
 	});
-	
+	};
 	
 	 getOnlineUsers($http).success(function(data) {
 			vm.users = data;
@@ -43,7 +44,8 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			  })
 			  .error(function (e) {
 				vm.message = "Could not get list of users";
-			});	
+			});
+			vm.redirect();
 		}
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	
