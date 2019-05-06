@@ -19,11 +19,13 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 	});
 	
 	if(vm.currentUser().email == vm.challengerEmail) {
+		console.log("het");
 		vm.otherPlayerName = vm.playerName;
 	}
 if(vm.currentUser().email == vm.playerEmail) {
 		vm.otherPlayerName = vm.challengerName;
-	}    vm.pageHeader = {
+	}    
+	vm.pageHeader = {
 		title: "Battle Ship"
     }; 
 	
