@@ -10,7 +10,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.pageHeader = {
 		title: "Play a Game",
 	    	heading: "Would you like to be X's or O's?",
-		other: "you are playing"
+		other: "You are playing as " + vm.yourPlayer()
     	};
 	
 	vm.currentUser = function() {
@@ -23,6 +23,12 @@ function GameController($http, $scope, $interval, $location, authentication) {
 			return true;
 		} else {
 			return false;
+		}
+	};
+	
+	vm.yourPlayer = function() {
+		if(vm.x == currentUser()) {
+			return "X's";
 		}
 	};
 	
