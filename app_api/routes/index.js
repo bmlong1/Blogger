@@ -29,5 +29,9 @@ router.post('/game/:challengerName/:challengerEmail/:playerName/:playerEmail', c
 router.get('/game', ctrlGameUsers.onlineUserGameList);
 router.delete('/game/:challengerEmail/:playerEmail', ctrlGameUsers.onlineUserDeleteGame);
 router.get('/game/:playerEmail', ctrlGameUsers.isAPlayer);
-router.get('/challenge/:email', ctrlGameUsers.challenger);
+router.get('/challenger/:email', ctrlGameUsers.challenger);
+router.get('/player/:email', ctrlGameUsers.player);
+router.get('/otherPlayer/:email', ctrlGameUsers.otherPlayer);
+
+
 module.exports = router;
