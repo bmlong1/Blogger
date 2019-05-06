@@ -4,25 +4,54 @@ body {
   text-align: center;
   color: #7BCE52;
 }
+.nums{
+display: inline-block;
+  width: 364px;
+}
+.lets {
+}
+.let{}
+.num{
+display: inline;
+  margin-left: 18px;
+  margin-right:18px;
+}
+.boxLetter{
+  padding-top: 12px;
+    font: 20px "Bradley Hand ITC", Helvetica, Arial, sans-serif;
 
-.box {
-    width: 100px;
-    height: 100px;
+}
+
+.box, .boxLetter{
+    width: 50px;
+    height: 50px;
     box-sizing: border-box;
     display: inline-block;
     float: left;
     position: relative;
     margin: 1px;
-     border: 2px solid black;
+}
+.box{
+      border: 2px solid black;
+}
+.ships {
+  display: inline-block;
+  
 }
 
-.tictactoe{
-     display: inline-block;
-    width: 306px;
-    height: 306px;
+.background, .background2 {
+    display: inline-block;
+    width: 364px;
+    height: 300px;
     position: relative;
     margin-right: 50px;
-    overflow: hidden;
+}
+.background {
+    margin-right: 50px;
+
+}
+.back{
+margin: auto;
 }
 
 
