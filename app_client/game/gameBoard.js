@@ -17,14 +17,15 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 		vm.playerEmail = data[0].playerEmail;
 		vm.playerName = data[0].playerName;
 	});
-	
+	vm.otherPlayerName = function() {
 	if(vm.currentUser().email == vm.challengerEmail) {
 		console.log("het");
-		vm.otherPlayerName = vm.playerName;
+		return vm.playerName;
 	}
 if(vm.currentUser().email == vm.playerEmail) {
-		vm.otherPlayerName = vm.challengerName;
+		return vm.challengerName;
 	}    
+	};
 	vm.pageHeader = {
 		title: "Battle Ship"
     }; 
