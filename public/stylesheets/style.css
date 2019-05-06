@@ -4,25 +4,8 @@ body {
   text-align: center;
   color: #7BCE52;
 }
-.nums{
-display: inline-block;
-  width: 364px;
-}
-.lets {
-}
-.let{}
-.num{
-display: inline;
-  margin-left: 18px;
-  margin-right:18px;
-}
-.boxLetter{
-  padding-top: 12px;
-    font: 20px "Bradley Hand ITC", Helvetica, Arial, sans-serif;
 
-}
-
-.box, .boxLetter{
+.box{
     width: 50px;
     height: 50px;
     box-sizing: border-box;
@@ -30,28 +13,15 @@ display: inline;
     float: left;
     position: relative;
     margin: 1px;
-}
-.box{
       border: 2px solid black;
 }
-.ships {
-  display: inline-block;
-  
-}
 
-.background, .background2 {
+.tictactoe {
     display: inline-block;
     width: 364px;
     height: 300px;
     position: relative;
     margin-right: 50px;
-}
-.background {
-    margin-right: 50px;
-
-}
-.back{
-margin: auto;
 }
 
 
