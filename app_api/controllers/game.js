@@ -96,10 +96,12 @@ const isAPlayer = function (req, res) {
 		if(! results) {
 			GameUsers.find({playerEmail: req.params.playerEmail}).exec(function(err, resultss) {
 		if(! resultss) {
+			console.log("none");
 			sendJSONResponse(res, 404, {
 				"message" : "user is not in a game"
 			});
 		} else if(err) {
+			console.log("err");
 			sendJSONResponse(res, 404, err);
 			return;
 		} 
