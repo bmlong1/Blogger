@@ -16,14 +16,15 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		return authentication.currentUser();
 	};
 	console.log(vm.currentUser());
-	$http.get('/api/player/'+vm.currentUser().email).success(function(data) {
+		$http.get('/api/challenger/'+vm.currentUser().email).success(function(data) {
 		if(data.length > 0) {
 				$location.url('/game-board');	
 
 		}
 		
 	});
-	$http.get('/api/challenger/'+vm.currentUser().email).success(function(data) {
+	
+	$http.get('/api/player/'+vm.currentUser().email).success(function(data) {
 		if(data.length > 0) {
 				$location.url('/game-board');	
 
