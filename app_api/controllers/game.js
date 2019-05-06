@@ -37,6 +37,7 @@ GameUsers.find({playerEmail: req.params.email}, playerEmail, function(err, resul
 };
 
 const otherPlayer = function(req,res) {
+	console.log("hey");
 GameUsers.find({playerEmail: req.params.email}, challengerEmail, function(err, results) {
 	if (!results) {
            GameUsers.find({challengerEmail: req.params.email}, playerEmail, playerName, function(err, results) {
