@@ -20,8 +20,12 @@ body {
 .background {
     width: 312px;
     height: 300px;
-    float: left;
+ //   float: left;
     position: relative;
+}
+
+.back{
+margin: auto;
 }
 
 
