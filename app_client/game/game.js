@@ -15,10 +15,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.currentUser = function() {
 		return authentication.currentUser();
 	};
-	
-	vm.changeHeading = function() {
-		vm.pageHeader.heading = "You are playing as "
-	};
+
 	
 	
 	 getOnlineUsers($http).success(function(data) {
@@ -59,5 +56,8 @@ function getOnlineUsers($http) {
 	return $http.get('/api/user');
 };
 
+	function changeHeading() {
+		vm.pageHeader.heading = "you are playing as";
+	};
 
 })();
