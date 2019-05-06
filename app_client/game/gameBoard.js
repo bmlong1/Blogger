@@ -14,11 +14,44 @@ function GameBoardController($http, $scope, $interval, $location, authentication
 		if (vm.currentUser().email == vm.challengerEmail) {
 			if (num == 1){
 			vm.printLetter1 = "x";
+			} else if (num == 2) {
+				vm.printLetter2 = "x";
+			}else if (num == 3) {
+				vm.printLetter3 = "x";
+			}else if (num == 4) {
+				vm.printLetter4 = "x";
+			}else if (num == 5) {
+				vm.printLetter5 = "x";
+			}else if (num == 6) {
+				vm.printLetter6 = "x";
+			}else if (num == 7) {
+				vm.printLetter7 = "x";
+			}else if (num == 8) {
+				vm.printLetter8 = "x";
+			}else if (num == 9) {
+				vm.printLetter9 = "x";
 			}
 		}
 		if (vm.currentUser().email == vm.playerEmail) {
-			vm.printLetter = "o";
-		}
+if (num == 1){
+			vm.printLetter1 = "o";
+			} else if (num == 2) {
+				vm.printLetter2 = "o";
+			}else if (num == 3) {
+				vm.printLetter3 = "o";
+			}else if (num == 4) {
+				vm.printLetter4 = "o";
+			}else if (num == 5) {
+				vm.printLetter5 = "o";
+			}else if (num == 6) {
+				vm.printLetter6 = "o";
+			}else if (num == 7) {
+				vm.printLetter7 = "o";
+			}else if (num == 8) {
+				vm.printLetter8 = "o";
+			}else if (num == 9) {
+				vm.printLetter9 = "o";
+			}		}
 	};
 	
 	$http.get('/api/game/' + vm.currentUser().email).success(function(data) {
