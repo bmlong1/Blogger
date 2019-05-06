@@ -106,6 +106,7 @@ const isAPlayer = function (req, res) {
 			return;
 		} 
 		console.log(resultss);
+				console.log("found");
 		sendJSONResponse(res, 200, resultss);
 	});
 		} else if(err) {
