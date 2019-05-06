@@ -17,7 +17,7 @@ body {
     margin: 1px;
 }
 
-.background .background2 {
+.background, .background2 {
     display: inline-block;
     width: 312px;
     height: 300px;
