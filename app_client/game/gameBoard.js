@@ -30,7 +30,35 @@ if(vm.currentUser().email == vm.playerEmail) {
 		title: "Battle Ship"
     }; 
 	
+		vm.noPlayer = function() {
+		if (vm.x == undefined && vm.o == undefined) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	
+	
+	vm.playerX = function() {
+		vm.x = vm.currentUser();
+		vm.hideX = true;
+	};
+	
+	vm.playerO = function() {
+		vm.o = vm.currentUser();
+		vm.hideO = true;
+	};
+	vm.yourPlayer = function() {
+		if(vm.x.email == vm.currentUser().email) {
+			return "X's";
+		} else if (vm.o.email == vm.currentUser().email) {
+			return "O's";
+		}
+	};
+	
 }
 
 	
 })();
+
+
