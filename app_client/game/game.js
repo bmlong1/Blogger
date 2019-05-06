@@ -9,12 +9,15 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		
 	vm.pageHeader = {
 		title: "Play a Game",
-	    	exsOhsQuestion: "Would you like to be X's or O's?",
-		yourRole: "You are playing" 
+	    	heading: "Would you like to be X's or O's?",
     	};
 	
 	vm.currentUser = function() {
 		return authentication.currentUser();
+	};
+	
+	vm.changeHeading() = function() {
+		vm.pageHeader.heading: "You are playing as "
 	};
 	
 	
