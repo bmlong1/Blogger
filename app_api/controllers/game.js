@@ -21,6 +21,43 @@ GameUsers.find({challengerEmail: req.params.email}, challengerEmail, function(er
 	sendJSONResponse(res, 200, results);
 });
 };
+
+const player = function(req,res) {
+GameUsers.find({playerEmail: req.params.email}, playerEmail, function(err, results) {
+	if (!results) {
+           sendJSONResponse(res, 404, {
+               "message" : "No users found"
+           });
+        } else if (err) {
+            sendJSONResponse(res, 404, err);
+            return;
+        }
+	sendJSONResponse(res, 200, results);
+});
+};
+
+const otherPlayer = function(req,res) {
+GameUsers.find({playerEmail: req.params.email}, challengerEmail, challengerName, function(err, results) {
+	if (!results) {
+           GameUsers.find({challengerEmail: req.params.email}, playerEmail, playerName, function(err, results) {
+	if (!results) {
+           sendJSONResponse(res, 404, {
+               "message" : "No users found"
+           });
+        } else if (err) {
+            sendJSONResponse(res, 404, err);
+            return;
+        }
+	sendJSONResponse(res, 200, results);
+});
+        } else if (err) {
+            sendJSONResponse(res, 404, err);
+            return;
+        }
+	sendJSONResponse(res, 200, results);
+});
+};
+
 const onlineUserGameList = function (req, res) {
     GameUsers.find().exec(function(err, results) {
         if (!results) {
@@ -95,5 +132,7 @@ module.exports = {
 	onlineUserDeleteGame,
 	onlineUserGameList, 
 	isAPlayer,
-	challenger
+	challenger,
+	player,
+	otherPlayer
 };
