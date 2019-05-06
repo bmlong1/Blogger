@@ -23,6 +23,13 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		}
 		
 	});
+	$http.get('/api/challenger/'+vm.currentUser().email).success(function(data) {
+		if(data.length > 0) {
+				$location.url('/game-board');	
+
+		}
+		
+	});
 	 getOnlineUsers($http).success(function(data) {
 			vm.users = data;
         		vm.message = "User data found!";
