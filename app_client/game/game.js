@@ -16,7 +16,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		return authentication.currentUser();
 	};
 	
-	vm.changeHeading() = function() {
+	vm.changeHeading = function() {
 		vm.pageHeader.heading = "You are playing as "
 	};
 	
