@@ -1,7 +1,11 @@
 <h1>{{vm.challengerName}} challenged {{vm.playerName}} to a game of Tic Tac Toe.</h1>
 <title>{{vm.pageHeader.title}}</title>
 <div class="tictactoe">
-<div ng-click="vm.markTile()" class="box"></div>
+  <div ng-click=class="box">
+    <p ng-show="vm.markTile() == 'x'">X</p>
+        <p ng-show="vm.markTile() == 'o'">O</p>
+
+  </div>
 <div class="box"></div>
 <div class="box"></div>
 <div class="box"></div>
