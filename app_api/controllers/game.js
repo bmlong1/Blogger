@@ -19,8 +19,8 @@ GameUsers.find({challengerEmail: req.params.email}.exec(function(err, results) {
             return;
         }
 	sendJSONResponse(res, 200, results);
-});
-});
+}));
+};
 
 const player = function(req,res) {
 GameUsers.find({playerEmail: req.params.email}.exec(function(err, results) {
@@ -33,8 +33,8 @@ GameUsers.find({playerEmail: req.params.email}.exec(function(err, results) {
             return;
         }
 	sendJSONResponse(res, 200, results);
-});
-});
+}));
+};
 
 const otherPlayer = function(req,res) {
 	console.log("hey");
