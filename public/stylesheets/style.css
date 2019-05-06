@@ -4,6 +4,9 @@ body {
   text-align: center;
   color: #7BCE52;
 }
+.nums{
+display: inline-block;
+}
 .num{
 display: inline;
 }
