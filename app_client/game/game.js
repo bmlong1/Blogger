@@ -16,7 +16,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		return authentication.currentUser();
 	};
 	vm.redirect = function(){
-		$http.get('/api/game').success(function(data) {
+		$http.get('/api/otherPlayer').success(function(data) {
 		console.log(data);
 		if(data.length > 0) {
 				$location.url('/game-board');	
