@@ -50,14 +50,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	
 	// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
-			getOnlineUsers($http)
-			  .success(function(data) {
-				vm.users = data;
-				vm.message = "Users list found!";
-			  })
-			  .error(function (e) {
-				vm.message = "Could not get list of users";
-			});	
+			vm.yourPlayer();	
 		}
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	
