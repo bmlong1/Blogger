@@ -18,6 +18,8 @@ display: inline;
 }
 .boxLetter{
   padding-top: 12px;
+    font: 40pt "Bradley Hand ITC", Helvetica, Arial, sans-serif;
+
 }
 
 .box, .boxLetter{
@@ -28,7 +30,6 @@ display: inline;
     float: left;
     position: relative;
     margin: 1px;
-  font: 40pt "Bradley Hand ITC", Helvetica, Arial, sans-serif;
 }
 .box{
       border: 2px solid black;
