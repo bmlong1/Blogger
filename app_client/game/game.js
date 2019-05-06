@@ -6,6 +6,12 @@
 GameController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function GameController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
+	
+	vm.yourPlayer = function() {
+		if(vm.x == currentUser()) {
+			return "X's";
+		}
+	};
 		
 	vm.pageHeader = {
 		title: "Play a Game",
@@ -26,11 +32,6 @@ function GameController($http, $scope, $interval, $location, authentication) {
 		}
 	};
 	
-	vm.yourPlayer = function() {
-		if(vm.x == currentUser()) {
-			return "X's";
-		}
-	};
 	
 	vm.playerX = function() {
 		vm.x = vm.currentUser();
