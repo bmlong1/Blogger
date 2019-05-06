@@ -15,7 +15,7 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	vm.yourPlayer = function() {
 		if(vm.x.email == vm.currentUser().email) {
 			return "X's";
-		} else if (vm.O.email == vm.currentUser().email) {
+		} else if (vm.o.email == vm.currentUser().email) {
 			return "O's";
 		}
 	};
