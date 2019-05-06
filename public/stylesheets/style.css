@@ -16,6 +16,10 @@ body {
     font-size: 40pt;
     margin: 1px;
 }
+.ships {
+  display: inline-block;
+  
+}
 
 .background, .background2 {
     display: inline-block;
