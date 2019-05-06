@@ -17,6 +17,13 @@ function GameController($http, $scope, $interval, $location, authentication) {
 	};
 
 	
+	vm.noPlayer = function() {
+		if (vm.x == undefined && vm.o == undefined) {
+			return true;
+		} else {
+			return false;
+		}
+	};
 	
 	 getOnlineUsers($http).success(function(data) {
 			vm.users = data;
