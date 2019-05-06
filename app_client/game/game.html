@@ -1,5 +1,5 @@
 <h1 ng-show="vm.noPlayer()">{{vm.pageHeader.heading}}</h1>
-<h1 ng-show="!vm.noPlayer()">{{vm.pageHeader.other}}</h1>
+<h1 ng-show="!vm.noPlayer()">{{vm.pageHeader.other}}{{vm.yourPlayer()}}</h1>
 <title>{{vm.pageHeader.title}}</title>
 <input ng-click="vm.playerX()" ng-hide="vm.hideX == true" type="button">X's</input>
 <input type="button">O's</input>
