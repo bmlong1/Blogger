@@ -94,8 +94,8 @@ const isAPlayer = function (req, res) {
 	GameUsers.deleteMany({challengerEmail:"bmlong1@millersville.edu"}, function(err){});*/
 	GameUsers.find({challengerEmail: req.params.playerEmail}).exec(function(err, results) {
 		if(! results) {
-			GameUsers.find({playerEmail: req.params.playerEmail}).exec(function(err, results) {
-		if(! results) {
+			GameUsers.find({playerEmail: req.params.playerEmail}).exec(function(err, resultss) {
+		if(! resultss) {
 			sendJSONResponse(res, 404, {
 				"message" : "user is not in a game"
 			});
@@ -103,8 +103,8 @@ const isAPlayer = function (req, res) {
 			sendJSONResponse(res, 404, err);
 			return;
 		} 
-		console.log(results);
-		sendJSONResponse(res, 200, results);
+		console.log(resultss);
+		sendJSONResponse(res, 200, resultss);
 	});
 		} else if(err) {
 			sendJSONResponse(res, 404, err);
