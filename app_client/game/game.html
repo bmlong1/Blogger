@@ -1,6 +1,6 @@
 <h1>{{vm.pageHeader.heading}}</h1>
-<title onload="vm.gamePlayers()">{{vm.pageHeader.title}}</title>
-		<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
+<title>{{vm.pageHeader.title}}</title>
+<form name="userForm" ng-submit="vm.submit()" ng-controller="GameController">
 <ul class="list" name="list">
  <div name="repe"ng-repeat="user in vm.users">
 	<li ng-show="(user.userEmail != vm.currentUser().email) && (user.userEmail != undefined)" class="list_item">
