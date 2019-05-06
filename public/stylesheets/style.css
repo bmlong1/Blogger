@@ -6,9 +6,12 @@ body {
 }
 .nums{
 display: inline-block;
+  width: 312px;
 }
 .num{
 display: inline;
+  margin-left: 18px;
+  margin-right:18px;
 }
 .box{
     width: 50px;
