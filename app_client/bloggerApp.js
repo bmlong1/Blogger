@@ -43,7 +43,7 @@ app.config( function($routeProvider, $locationProvider) {
 			controller: 'LoginController',
 			controllerAs: 'vm'
 		})
-	.when('/game', {
+	.when('/chat', {
 		templateUrl: '/chat/chat.html',
 		controller: 'ChatController',
 		controllerAs: 'vm'
