@@ -44,6 +44,6 @@ function getComments($http) {
 };
 	
 	function addChat($http, data) {
-		return $http.post('/api/chat/' + data);
+		return $http.post('/api/chat/', data);
 	};
 })();
