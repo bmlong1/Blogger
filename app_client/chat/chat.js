@@ -26,7 +26,6 @@ function ChatController($http, $scope, $interval, $location, authentication) {
 			  })
 			  .error(function (e) {
 			});
-			vm.redirect();
 		}
 		$interval( function(){$scope.callAtInterval();}, 3000, 0, true);
 	
