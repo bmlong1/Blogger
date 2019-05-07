@@ -7,8 +7,7 @@ var auth = jwt({
 });
 var ctrlBlog = require('../controllers/blogs');
 var ctrlAuth = require('../controllers/authentication');
-var ctrlOnlineUser = require('../controllers/onlineUser');
-var ctrlGameUsers = require('../controllers/game');
+var ctrlChat = require('../controllers/chat');
 
 router.get('/blogs', ctrlBlog.blogList);
 router.post('/blogs', auth, ctrlBlog.blogCreate);
@@ -20,18 +19,5 @@ router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 router.get('/allUsers', ctrlAuth.userList);
 
-router.post('/user', ctrlOnlineUser.onlineUserAdd);
-router.get('/user', ctrlOnlineUser.onlineUserList);
-router.delete('/user/:email', ctrlOnlineUser.onlineUserDelete);
-router.get('/challenger/:name', ctrlOnlineUser.otherPlayer);
-
-router.post('/game/:challengerName/:challengerEmail/:playerName/:playerEmail', ctrlGameUsers.onlineUserStartGame);
-router.get('/game', ctrlGameUsers.onlineUserGameList);
-router.delete('/game/:challengerEmail/:playerEmail', ctrlGameUsers.onlineUserDeleteGame);
-router.get('/game/:playerEmail', ctrlGameUsers.isAPlayer);
-router.get('/challenger/:email', ctrlGameUsers.challenger);
-router.get('/player/:email', ctrlGameUsers.player);
-router.get('/otherPlayer/:email', ctrlGameUsers.otherPlayer);
-
-
+router.get('/chat', ctrlChat.getComments);
 module.exports = router;
