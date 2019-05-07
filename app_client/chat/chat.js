@@ -6,7 +6,7 @@
 ChatController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
 function ChatController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
-		
+	vm.chat = {};
 	vm.pageHeader = {
 		title: "Chat with Friends",
 	    	heading: "You can chat with the other users who are online, or you can just browse what has been said previously."
@@ -16,7 +16,15 @@ function ChatController($http, $scope, $interval, $location, authentication) {
 		return authentication.currentUser();
 	};
 	
-	
+	vm.submit = function() {
+		var data = vm.chat;
+        	data.comment = userForm.comment.value;
+        	data.authorName = userForm.authorName.value;
+		data.authorEmail = userForm.authorEmail.value;
+		   	addChat($http, data).success(function(data) {
+		}).error(function(e) {
+		});
+	};
 	
 	// Refreshes lists of users periodically					  
 		$scope.callAtInterval = function() {
@@ -33,4 +41,8 @@ function ChatController($http, $scope, $interval, $location, authentication) {
 function getComments($http) {
   return $http.get('/api/chat');
 };
+	
+	function addChat($http, data) {
+		return $http.post('/api/chat/' + data);
+	};
 })();
