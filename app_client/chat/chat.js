@@ -31,6 +31,6 @@ function ChatController($http, $scope, $interval, $location, authentication) {
 	
 }
 function getComments($http) {
-  return $http.get('/chat');
+  return $http.get('/api/chat');
 };
 })();
