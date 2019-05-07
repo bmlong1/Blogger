@@ -4,7 +4,7 @@
 	<div ng-repeat="com in vm.comments">
 		<li class="list_item">
 			<div class="comment">{{com.comment}}</div>
-      <div class="author">{{com.author}}</div>
+    		  <div class="author">{{com.authorName}}</div>
 		</li>
 	</div>
 </ul> 
@@ -16,7 +16,7 @@
 			<br>
 			<input class="form-control" id="comment" name="comment" placeholder="Comment"></input>
 			<br> 
-			<label for="Author">Blog Text:</label>
+			<label for="Author">Author:</label>
 			<br>
 			<input class="form-control" id="authorName" name="authorName" value={{vm.currentUser().name}} readonly></input>
 			<input class="form-control" id="authorEmail" name="authorEmail" value={{vm.currentUser().email}} hidden></input>
