@@ -24,8 +24,9 @@ var buildChatList = function(req, res, results) {
     var comments = [];
     results.forEach(function(obj) {
         comments.push({
-            comment: obj.blogTitle,
-            author: obj.blogText,
+            comment: obj.comment,
+            authorName: obj.authorName,
+            authorEmail: obj.authorEmail,
             _id: obj._id
         });
     });
@@ -35,7 +36,8 @@ var buildChatList = function(req, res, results) {
 const chatAdd = function (req, res) {
     Chat.create({
         comment: req.body.comment,
-        author: req.body.author,
+        authorName: req.body.authorName,
+        authorEmail: req.body.authorEmail,
     }, function(err, chat) {
         if (err) {
             sendJSONResponse(res, 400, err);
