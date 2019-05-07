@@ -20,6 +20,6 @@ router.post('/login', ctrlAuth.login);
 router.get('/allUsers', ctrlAuth.userList);
 
 router.get('/chat', ctrlChat.commentList);
-router.post('/chat/:comment/:author', ctrlChat.chatAdd);
+router.post('/chat', ctrlChat.chatAdd);
 router.delete('/chat/:chatid', ctrlChat.chatDelete);
 module.exports = router;
