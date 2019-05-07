@@ -19,5 +19,7 @@ router.post('/register', ctrlAuth.register);
 router.post('/login', ctrlAuth.login);
 router.get('/allUsers', ctrlAuth.userList);
 
-router.get('/chat', ctrlChat.getComments);
+router.get('/chat', ctrlChat.commentList);
+router.post('/chat/:comment/:author', ctrlChat.chatAdd);
+router.delete('/chat/:chatid', ctrlChat.chatDelete);
 module.exports = router;
