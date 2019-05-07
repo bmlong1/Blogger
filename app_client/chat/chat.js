@@ -21,9 +21,10 @@ function ChatController($http, $scope, $interval, $location, authentication) {
         	data.comment = userForm.comment.value;
         	data.authorName = userForm.authorName.value;
 		data.authorEmail = userForm.authorEmail.value;
-		   	addChat($http, data).success(function(data) {
+		  
+		console.log(data);/*	addChat($http, data).success(function(data) {
 		}).error(function(e) {
-		});
+		});*/
 	};
 	
 	// Refreshes lists of users periodically					  
