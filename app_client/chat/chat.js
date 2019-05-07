@@ -4,7 +4,7 @@
     .module('bloggerApp')
     .controller('ChatController', ChatController);
 ChatController.$inject = ['$http', '$scope', '$interval', '$location', 'authentication'];
-function GameController($http, $scope, $interval, $location, authentication) {
+function ChatController($http, $scope, $interval, $location, authentication) {
 	var vm = this;
 		
 	vm.pageHeader = {
